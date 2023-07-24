@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		706EA5252A6E5596002AF3C2 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706EA5242A6E5596002AF3C2 /* CircleButtonView.swift */; };
 		70F190392A6E4BF9001F6266 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F190382A6E4BF9001F6266 /* Color.swift */; };
 		70F190422A6E51A5001F6266 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F190412A6E51A5001F6266 /* HomeView.swift */; };
 		70FD1FF52A6AC412000E02A8 /* TheRickandMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD1FF42A6AC412000E02A8 /* TheRickandMortyApp.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		706EA5242A6E5596002AF3C2 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 		70F190382A6E4BF9001F6266 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		70F190412A6E51A5001F6266 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = TheRickandMorty/Core/Home/Views/HomeView.swift; sourceTree = SOURCE_ROOT; };
 		70FD1FF12A6AC412000E02A8 /* TheRickandMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheRickandMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +38,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		706EA5222A6E5563002AF3C2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				706EA5232A6E5573002AF3C2 /* CircleButton */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		706EA5232A6E5573002AF3C2 /* CircleButton */ = {
+			isa = PBXGroup;
+			children = (
+				706EA5242A6E5596002AF3C2 /* CircleButtonView.swift */,
+			);
+			path = CircleButton;
+			sourceTree = "<group>";
+		};
 		70F190362A6E4BE0001F6266 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -47,6 +65,7 @@
 		70F1903D2A6E5131001F6266 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				706EA5222A6E5563002AF3C2 /* Components */,
 				70F1903E2A6E5181001F6266 /* Home */,
 			);
 			path = Core;
@@ -95,9 +114,9 @@
 		70FD1FF32A6AC412000E02A8 /* TheRickandMorty */ = {
 			isa = PBXGroup;
 			children = (
+				70FD1FF42A6AC412000E02A8 /* TheRickandMortyApp.swift */,
 				70F1903D2A6E5131001F6266 /* Core */,
 				70F190362A6E4BE0001F6266 /* Extensions */,
-				70FD1FF42A6AC412000E02A8 /* TheRickandMortyApp.swift */,
 				70FD1FF62A6AC412000E02A8 /* ContentView.swift */,
 				70FD1FF82A6AC415000E02A8 /* Assets.xcassets */,
 				70FD1FFA2A6AC415000E02A8 /* Preview Content */,
@@ -186,6 +205,7 @@
 				70FD1FF72A6AC412000E02A8 /* ContentView.swift in Sources */,
 				70F190422A6E51A5001F6266 /* HomeView.swift in Sources */,
 				70FD1FF52A6AC412000E02A8 /* TheRickandMortyApp.swift in Sources */,
+				706EA5252A6E5596002AF3C2 /* CircleButtonView.swift in Sources */,
 				70F190392A6E4BF9001F6266 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
