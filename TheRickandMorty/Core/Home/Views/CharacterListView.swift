@@ -11,8 +11,13 @@ struct CharacterListView: View {
     @Binding var characters: [CharacterModel]
     
     var body: some View {
-        List(characters) { character in
-            CharacterCardView(imageUrl: URL(string: character.image)!, characterName: character.name)
+        ScrollView {
+            LazyVGrid(columns: [GridItem(.flexible(), spacing: 16), GridItem(.flexible(), spacing: 16)], spacing: 16) {
+                ForEach(characters) { character in
+                    CharacterCardView(imageUrl: URL(string: character.image)!, characterName: character.name)
+                }
+            }
+            .padding(16)
         }
     }
 }

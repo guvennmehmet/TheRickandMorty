@@ -18,7 +18,7 @@ struct CharacterCardView: View {
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 150, height: 200)
+                        .frame(width: 100, height: 150)
                         .cornerRadius(10)
                 } placeholder: {
                     ProgressView()
