@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		70F190392A6E4BF9001F6266 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F190382A6E4BF9001F6266 /* Color.swift */; };
+		70F190422A6E51A5001F6266 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F190412A6E51A5001F6266 /* HomeView.swift */; };
 		70FD1FF52A6AC412000E02A8 /* TheRickandMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD1FF42A6AC412000E02A8 /* TheRickandMortyApp.swift */; };
 		70FD1FF72A6AC412000E02A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD1FF62A6AC412000E02A8 /* ContentView.swift */; };
 		70FD1FF92A6AC415000E02A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70FD1FF82A6AC415000E02A8 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		70F190382A6E4BF9001F6266 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		70F190412A6E51A5001F6266 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = TheRickandMorty/Core/Home/Views/HomeView.swift; sourceTree = SOURCE_ROOT; };
 		70FD1FF12A6AC412000E02A8 /* TheRickandMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheRickandMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70FD1FF42A6AC412000E02A8 /* TheRickandMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheRickandMortyApp.swift; sourceTree = "<group>"; };
 		70FD1FF62A6AC412000E02A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +44,38 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		70F1903D2A6E5131001F6266 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				70F1903E2A6E5181001F6266 /* Home */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		70F1903E2A6E5181001F6266 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				70F190402A6E518F001F6266 /* ViewModels */,
+				70F1903F2A6E518B001F6266 /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		70F1903F2A6E518B001F6266 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				70F190412A6E51A5001F6266 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		70F190402A6E518F001F6266 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		70FD1FE82A6AC412000E02A8 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +95,7 @@
 		70FD1FF32A6AC412000E02A8 /* TheRickandMorty */ = {
 			isa = PBXGroup;
 			children = (
+				70F1903D2A6E5131001F6266 /* Core */,
 				70F190362A6E4BE0001F6266 /* Extensions */,
 				70FD1FF42A6AC412000E02A8 /* TheRickandMortyApp.swift */,
 				70FD1FF62A6AC412000E02A8 /* ContentView.swift */,
@@ -149,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70FD1FF72A6AC412000E02A8 /* ContentView.swift in Sources */,
+				70F190422A6E51A5001F6266 /* HomeView.swift in Sources */,
 				70FD1FF52A6AC412000E02A8 /* TheRickandMortyApp.swift in Sources */,
 				70F190392A6E4BF9001F6266 /* Color.swift in Sources */,
 			);
