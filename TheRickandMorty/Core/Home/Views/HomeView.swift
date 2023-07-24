@@ -7,8 +7,30 @@
 
 import SwiftUI
 
+func fetchCharacters(completion: @escaping ([CharacterModel]) -> ()) {
+    
+    let url = URL(string: "https://rickandmortyapi.com/api/character")!
+    
+    URLSession.shared.dataTask(with: url) { data, response, error in
+        if let error = error {
+            print("error: \(error.localizedDescription)")
+            return
+        }
+        
+        if let data = data {
+            do {
+                let result = try JSONDecoder().decode(CharacterList.self, from: data)
+                completion(result.results)
+            } catch {
+                print("error: \(error.localizedDescription)")
+            }
+        }
+    }.resume()
+}
+
 struct HomeView: View {
     
+    @State private var characters: [CharacterModel] = []
     @State private var showPortfolio: Bool = false
     
     var body: some View {
@@ -20,7 +42,17 @@ struct HomeView: View {
             //content layer
             VStack {
                 homeHeader
+                if !characters.isEmpty {
+                    CharacterListView(characters: $characters)
+                } else {
+                    ProgressView()
+                }
                 Spacer(minLength: 0)
+            }
+            .onAppear {
+                fetchCharacters { characters in
+                    self.characters = characters
+                }
             }
         }
     }
