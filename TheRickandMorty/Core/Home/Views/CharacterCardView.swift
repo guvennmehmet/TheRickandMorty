@@ -12,20 +12,27 @@ struct CharacterCardView: View {
     var imageUrl: URL
     var characterName: String
     
+    var firstWordOfCharacterName: String {
+            let words = characterName.components(separatedBy: " ")
+            return words.first ?? characterName
+        }
+    
     var body: some View {
             VStack(spacing: 10) {
                 AsyncImage(url: imageUrl) { image in
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 150)
+                        .frame(width: 130, height: 190)
                         .cornerRadius(10)
                 } placeholder: {
                     ProgressView()
                 }
                 
-                Text("- \(characterName) -")
+                Text("- \(firstWordOfCharacterName) -")
                     .font(.headline)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
             }
             .padding()
             .background(Color.white)
