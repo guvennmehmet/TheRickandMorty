@@ -8,7 +8,6 @@
 import SwiftUI
 
 func fetchCharacters(completion: @escaping ([CharacterModel]) -> ()) {
-    
     let url = URL(string: "https://rickandmortyapi.com/api/character")!
     
     URLSession.shared.dataTask(with: url) { data, response, error in
@@ -35,24 +34,58 @@ struct HomeView: View {
     
     var body: some View {
         ZStack {
-            //background layer
+            // Background layer
             Color.theme.background
                 .ignoresSafeArea()
             
-            //content layer
-            VStack {
+            // Content layer
+            VStack(spacing: 0) {
                 homeHeader
+                Spacer()
                 if !characters.isEmpty {
                     CharacterListView(characters: $characters)
                 } else {
                     ProgressView()
                 }
-                Spacer(minLength: 0)
             }
-            .onAppear {
-                fetchCharacters { characters in
-                    self.characters = characters
+            
+            // bottom navigation bar
+            VStack {
+                Spacer()
+                TabView {
+                    Text("Home")
+                        .tabItem {
+                            Image(systemName: "house")
+                            Text("Home")
+                        }
+                    Text("Characters")
+                        .tabItem {
+                            Image(systemName: "person.2")
+                            Text("Characters")
+                        }
+                    Text("Locations")
+                        .tabItem {
+                            Image(systemName: "map")
+                            Text("Locations")
+                        }
+                    Text("Episodes")
+                        .tabItem {
+                            Image(systemName: "tv")
+                            Text("Episodes")
+                        }
+                    Text("Favorites")
+                        .tabItem {
+                            Image(systemName: "star")
+                            Text("Favorites")
+                        }
                 }
+                .frame(maxWidth: .infinity)
+                .background(Color.theme.accent)
+            }
+        }
+        .onAppear {
+            fetchCharacters { characters in
+                self.characters = characters
             }
         }
     }
