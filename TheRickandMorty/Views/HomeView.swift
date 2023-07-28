@@ -48,40 +48,6 @@ struct HomeView: View {
                     ProgressView()
                 }
             }
-            
-            // bottom navigation bar
-            VStack {
-                Spacer()
-                TabView {
-                    Text("Home")
-                        .tabItem {
-                            Image(systemName: "house")
-                            Text("Home")
-                        }
-                    Text("Characters")
-                        .tabItem {
-                            Image(systemName: "person.2")
-                            Text("Characters")
-                        }
-                    Text("Locations")
-                        .tabItem {
-                            Image(systemName: "map")
-                            Text("Locations")
-                        }
-                    Text("Episodes")
-                        .tabItem {
-                            Image(systemName: "tv")
-                            Text("Episodes")
-                        }
-                    Text("Favorites")
-                        .tabItem {
-                            Image(systemName: "star")
-                            Text("Favorites")
-                        }
-                }
-                .frame(maxWidth: .infinity)
-                .background(Color.theme.accent)
-            }
         }
         .onAppear {
             fetchCharacters { characters in

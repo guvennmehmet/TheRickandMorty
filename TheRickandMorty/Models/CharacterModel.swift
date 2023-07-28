@@ -15,7 +15,7 @@ https://rickandmortyapi.com/api
  
  */
 
-struct CharacterModel: Codable, Identifiable {
+struct Character: Codable, Identifiable {
     let id: Int
     let name: String
     let status: String
@@ -50,6 +50,17 @@ struct CharacterLocationModel: Codable {
     let url: String
 }
 
-struct CharacterList: Codable {
-    let results: [CharacterModel]
+struct CharactersList: Codable {
+    let results: [Character]
+}
+
+extension Character {
+    static let all: [Character] = [
+        Character(id: 1, name: "Rick Sanchez", status: "Alive", species: "Human", type: "Scientist", gender: "Male", origin: CharacterLocationModel(name: "Earth", url: "https://rickandmortyapi.com/api/location/1"), location: CharacterLocationModel(name: "Earth (Replacement Dimension)", url: "https://rickandmortyapi.com/api/location/20"), image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg", episode: ["https://rickandmortyapi.com/api/episode/1"], url: "https://rickandmortyapi.com/api/character/1", created: "2017-11-04T18:48:46.250Z"),
+        Character(id: 2, name: "Morty Smith", status: "Alive", species: "Human", type: "Human", gender: "Male", origin: CharacterLocationModel(name: "Earth", url: "https://rickandmortyapi.com/api/location/1"), location: CharacterLocationModel(name: "Earth (Replacement Dimension)", url: "https://rickandmortyapi.com/api/location/20"), image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg", episode: ["https://rickandmortyapi.com/api/episode/1"], url: "https://rickandmortyapi.com/api/character/2", created: "2017-11-04T18:50:21.651Z"),
+        Character(id: 3, name: "Summer Smith", status: "Alive", species: "Human", type: "Human", gender: "Female", origin: CharacterLocationModel(name: "Earth", url: "https://rickandmortyapi.com/api/location/1"), location: CharacterLocationModel(name: "Earth (Replacement Dimension)", url: "https://rickandmortyapi.com/api/location/20"), image: "https://rickandmortyapi.com/api/character/avatar/3.jpeg", episode: ["https://rickandmortyapi.com/api/episode/6"], url: "https://rickandmortyapi.com/api/character/3", created: "2017-11-04T18:50:21.651Z"),
+        Character(id: 4, name: "Jerry Smith", status: "Alive", species: "Human", type: "Human", gender: "Male", origin: CharacterLocationModel(name: "Earth", url: "https://rickandmortyapi.com/api/location/1"), location: CharacterLocationModel(name: "Earth (Replacement Dimension)", url: "https://rickandmortyapi.com/api/location/20"), image: "https://rickandmortyapi.com/api/character/avatar/4.jpeg", episode: ["https://rickandmortyapi.com/api/episode/6"], url: "https://rickandmortyapi.com/api/character/4", created: "2017-11-04T18:50:21.651Z"),
+        Character(id: 5, name: "Beth Smith", status: "Alive", species: "Human", type: "Human", gender: "Female", origin: CharacterLocationModel(name: "Earth", url: "https://rickandmortyapi.com/api/location/1"), location: CharacterLocationModel(name: "Earth (Replacement Dimension)", url: "https://rickandmortyapi.com/api/location/20"), image: "https://rickandmortyapi.com/api/character/avatar/5.jpeg", episode: ["https://rickandmortyapi.com/api/episode/6"], url: "https://rickandmortyapi.com/api/character/5", created: "2017-11-04T18:50:21.651Z"),
+        
+    ]
 }

@@ -12,7 +12,7 @@ struct TheRickandMortyApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                HomeView()
+                CharactersView()
                     .navigationBarHidden(true)
             }
         }
