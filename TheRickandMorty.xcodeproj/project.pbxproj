@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		702908DF2A777DD7008AF4C4 /* CharacterDetailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702908DE2A777DD7008AF4C4 /* CharacterDetailCard.swift */; };
 		702908E32A77CA0C008AF4C4 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702908E22A77CA0C008AF4C4 /* CharacterViewModel.swift */; };
+		702908E92A77E6E5008AF4C4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702908E82A77E6E5008AF4C4 /* API.swift */; };
 		706EA5282A6E5E17002AF3C2 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706EA5272A6E5E17002AF3C2 /* CharacterModel.swift */; };
 		709812962A738B8D00ACBDDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709812952A738B8D00ACBDDF /* ContentView.swift */; };
 		709812982A738BAA00ACBDDF /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709812972A738BAA00ACBDDF /* TabBar.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		702908DE2A777DD7008AF4C4 /* CharacterDetailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailCard.swift; sourceTree = "<group>"; };
 		702908E22A77CA0C008AF4C4 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
+		702908E82A77E6E5008AF4C4 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		706EA5272A6E5E17002AF3C2 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		709812952A738B8D00ACBDDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		709812972A738BAA00ACBDDF /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		702908E72A77E6D3008AF4C4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				702908E82A77E6E5008AF4C4 /* API.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		706EA5262A6E5DA4002AF3C2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				70FD1FF42A6AC412000E02A8 /* TheRickandMortyApp.swift */,
+				702908E72A77E6D3008AF4C4 /* Service */,
 				70F190402A6E518F001F6266 /* ViewModels */,
 				706EA5262A6E5DA4002AF3C2 /* Models */,
 				70F1903F2A6E518B001F6266 /* Views */,
@@ -225,6 +236,7 @@
 				709812A62A738DE500ACBDDF /* HomeView.swift in Sources */,
 				706EA5282A6E5E17002AF3C2 /* CharacterModel.swift in Sources */,
 				709812AA2A73B9AC00ACBDDF /* CharacterList.swift in Sources */,
+				702908E92A77E6E5008AF4C4 /* API.swift in Sources */,
 				7098129C2A738BF100ACBDDF /* EpisodesView.swift in Sources */,
 				709812A42A738C3500ACBDDF /* FavoritesView.swift in Sources */,
 				709812AC2A73CE8300ACBDDF /* CharacterView.swift in Sources */,

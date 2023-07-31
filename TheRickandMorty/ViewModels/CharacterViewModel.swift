@@ -13,9 +13,7 @@ class CharacterViewModel: ObservableObject {
     @Published var characters: [Character] = []
 
     func fetchCharacters() {
-        guard let url = URL(string: "https://rickandmortyapi.com/api/character") else {
-            return
-        }
+        let url = API.characterURL
 
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
