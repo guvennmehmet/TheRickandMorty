@@ -23,7 +23,7 @@ struct CharacterView: View {
                         Image(systemName: "photo")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 100, height: 100, alignment: .center)
+                            .frame(width: 100, height: 100)
                             .foregroundColor(.white.opacity(0.7))
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
@@ -33,25 +33,15 @@ struct CharacterView: View {
                 .ignoresSafeArea(.container, edges: .top)
                 
                 VStack(spacing: 30) {
-                    Text(character.name)
-                        .font(.largeTitle)
-                        .bold()
-                        .multilineTextAlignment(.center)
-                    
-                    VStack(alignment: .leading, spacing: 30) {
-                        if !character.gender.isEmpty {
-                            Text(character.gender)
-                        }
-                        Text(character.species)
-                        Text(character.status)
-                        Text(character.created)
-                        Text(character.type)
-                        Text(character.location.name)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    Spacer()
+                        .frame(width: 10)
+                    CharacterDetailCard(character: Character.all[0])
+                    Spacer()
+                        .frame(width: 10)
                 }
                 .padding(.horizontal)
             }
+            .padding()
         }
     }
 }
@@ -61,4 +51,3 @@ struct CharacterView_Previews: PreviewProvider {
         CharacterView(character: Character.all[0])
     }
 }
-
