@@ -8,19 +8,26 @@
 import SwiftUI
 
 struct CharactersView: View {
+    @ObservedObject var characterViewModel: CharacterViewModel
+
     var body: some View {
         NavigationView {
             ScrollView {
-                CharacterList(character: Character.all)
+                CharacterList(characterViewModel: characterViewModel) 
             }
-                .navigationTitle("Characters")
+            .navigationTitle("Characters")
         }
         .navigationViewStyle(.stack)
+        .onAppear {
+            characterViewModel.fetchCharacters()
+        }
     }
 }
 
 struct CharactersView_Previews: PreviewProvider {
     static var previews: some View {
-        CharactersView()
+        let viewModel = CharacterViewModel()
+
+        return CharactersView(characterViewModel: viewModel)
     }
 }

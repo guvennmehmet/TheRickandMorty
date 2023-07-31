@@ -98,7 +98,15 @@ extension View {
 
 struct CharacterDetailCard_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterDetailCard(character: Character.all[0])
-            .previewLayout(.sizeThatFits)
+        let viewModel = CharacterViewModel()
+        viewModel.fetchCharacters()
+        
+        if let character = viewModel.characters.first {
+            return AnyView(CharacterDetailCard(character: character)
+                .previewLayout(.sizeThatFits))
+        } else {
+            return AnyView(Text("Loading...") 
+                .previewLayout(.sizeThatFits))
+        }
     }
 }

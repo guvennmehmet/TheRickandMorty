@@ -1,19 +1,18 @@
+// CharacterList.swift
+// TheRickandMorty
 //
-//  CharacterList.swift
-//  TheRickandMorty
-//
-//  Created by Mehmet Güven on 28.07.2023.
+// Created by Mehmet Güven on 28.07.2023.
 //
 
 import SwiftUI
 
 struct CharacterList: View {
-    var character: [Character]
-    
+    @ObservedObject var characterViewModel: CharacterViewModel
+
     var body: some View {
         VStack {
             HStack {
-                Text("\(character.count) \(character.count > 1 ? "character" : "character")")
+                Text("\(characterViewModel.characters.count) \(characterViewModel.characters.count > 1 ? "characters" : "character")")
                     .font(.headline)
                     .fontWeight(.medium)
                     .opacity(0.7)
@@ -21,22 +20,28 @@ struct CharacterList: View {
             }
             
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
-                ForEach(character) { character in
-                    NavigationLink(destination: CharacterView(character: character)) {
-                        CharacterCard(character: character)
+                ForEach(characterViewModel.characters) { character in
+                    NavigationLink(destination: CharacterView(characterViewModel: characterViewModel, characterID: character.id)) {
+                        CharacterCard(characterViewModel: characterViewModel, character: character)
                     }
                 }
             }
             .padding(.top)
         }
         .padding(.horizontal)
+        .onAppear {
+            characterViewModel.fetchCharacters()
+        }
     }
 }
 
 struct CharacterList_Previews: PreviewProvider {
     static var previews: some View {
-        ScrollView {
-            CharacterList(character: Character.all)
+        let viewModel = CharacterViewModel()
+        viewModel.fetchCharacters()
+        
+        return ScrollView {
+            CharacterList(characterViewModel: viewModel)
         }
     }
 }

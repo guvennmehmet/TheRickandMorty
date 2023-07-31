@@ -10,10 +10,7 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         NavigationView {
-            List(Character.all) { Character in
-                Text(Character.name)
-                    .navigationTitle("Rick and Morty")
-            }
+            Text("home view")
         }
         .navigationViewStyle(.stack)
     }

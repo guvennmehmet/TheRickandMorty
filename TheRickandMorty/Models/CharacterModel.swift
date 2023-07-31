@@ -54,6 +54,7 @@ struct CharactersList: Codable {
     let results: [Character]
 }
 
+/*
 extension Character {
     static let all: [Character] = [
         Character(id: 1, name: "Rick Sanchez", status: "Alive", species: "Human", type: "Scientist", gender: "Male", origin: CharacterLocationModel(name: "Earth", url: "https://rickandmortyapi.com/api/location/1"), location: CharacterLocationModel(name: "Earth (Replacement Dimension)", url: "https://rickandmortyapi.com/api/location/20"), image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg", episode: ["https://rickandmortyapi.com/api/episode/1"], url: "https://rickandmortyapi.com/api/character/1", created: "2017-11-04T18:48:46.250Z"),
@@ -64,3 +65,4 @@ extension Character {
         
     ]
 }
+*/

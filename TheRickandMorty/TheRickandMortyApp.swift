@@ -9,10 +9,12 @@ import SwiftUI
 
 @main
 struct TheRickandMortyApp: App {
+    @StateObject private var characterViewModel = CharacterViewModel()
+
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                CharactersView()
+                CharactersView(characterViewModel: characterViewModel)
                     .navigationBarHidden(true)
             }
         }

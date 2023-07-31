@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		702908DF2A777DD7008AF4C4 /* CharacterDetailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702908DE2A777DD7008AF4C4 /* CharacterDetailCard.swift */; };
+		702908E32A77CA0C008AF4C4 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702908E22A77CA0C008AF4C4 /* CharacterViewModel.swift */; };
 		706EA5282A6E5E17002AF3C2 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706EA5272A6E5E17002AF3C2 /* CharacterModel.swift */; };
 		709812962A738B8D00ACBDDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709812952A738B8D00ACBDDF /* ContentView.swift */; };
 		709812982A738BAA00ACBDDF /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709812972A738BAA00ACBDDF /* TabBar.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		702908DE2A777DD7008AF4C4 /* CharacterDetailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailCard.swift; sourceTree = "<group>"; };
+		702908E22A77CA0C008AF4C4 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		706EA5272A6E5E17002AF3C2 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		709812952A738B8D00ACBDDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		709812972A738BAA00ACBDDF /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		70F190402A6E518F001F6266 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				702908E22A77CA0C008AF4C4 /* CharacterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				709812A42A738C3500ACBDDF /* FavoritesView.swift in Sources */,
 				709812AC2A73CE8300ACBDDF /* CharacterView.swift in Sources */,
 				709812A82A73AEEE00ACBDDF /* CharacterCard.swift in Sources */,
+				702908E32A77CA0C008AF4C4 /* CharacterViewModel.swift in Sources */,
 				709812962A738B8D00ACBDDF /* ContentView.swift in Sources */,
 				709812A02A738C0A00ACBDDF /* CharactersView.swift in Sources */,
 				702908DF2A777DD7008AF4C4 /* CharacterDetailCard.swift in Sources */,

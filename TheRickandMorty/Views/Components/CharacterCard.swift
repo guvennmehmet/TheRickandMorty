@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct CharacterCard: View {
+    @ObservedObject var characterViewModel: CharacterViewModel
     var character: Character
+
+    init(characterViewModel: CharacterViewModel, character: Character) {
+        self.characterViewModel = characterViewModel
+        self.character = character
+    }
     
     var firstWordOfCharacterName: String {
         let words = character.name.components(separatedBy: " ")
@@ -48,6 +54,11 @@ struct CharacterCard: View {
 
 struct CharacterCard_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterCard(character: Character.all[0])
+        let viewModel = CharacterViewModel()
+        if let character = viewModel.getCharacterById(1) {
+            return AnyView(CharacterCard(characterViewModel: viewModel, character: character))
+        } else {
+            return AnyView(Text("Character not found."))
+        }
     }
 }

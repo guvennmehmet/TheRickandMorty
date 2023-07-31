@@ -15,10 +15,10 @@ struct TabBar: View {
                     Label("Home", systemImage: "house")
                 }
             
-            CharactersView()
+          /*  CharactersView()
                 .tabItem {
                     Label("Characters" , systemImage: "person.2")
-                }
+                } */
             
             LocationsView()
                 .tabItem {
