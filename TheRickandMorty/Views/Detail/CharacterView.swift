@@ -12,34 +12,30 @@ struct CharacterView: View {
     
     var body: some View {
         ScrollView {
-            VStack(spacing: 0) {
+            VStack() {
                 ZStack(alignment: .top) {
                     AsyncImage(url: URL(string: character.image)) { image in
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(height: 300)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .cornerRadius(20)
                     } placeholder: {
+                        RoundedRectangle(cornerRadius: 20)
+                            .frame(width: 300)
+                            .foregroundColor(Color.gray.opacity(0.5))
+                            .overlay(
                         Image(systemName: "photo")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 100, height: 100)
                             .foregroundColor(.white.opacity(0.7))
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        )
                     }
-                    .frame(height: 300)
-                    .background(LinearGradient(gradient: Gradient(colors: [Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
                 }
                 .ignoresSafeArea(.container, edges: .top)
                 
-                VStack(spacing: 30) {
-                    Spacer()
-                        .frame(width: 10)
                     CharacterDetailCard(character: Character.all[0])
-                    Spacer()
-                        .frame(width: 10)
-                }
-                .padding(.horizontal)
             }
             .padding()
         }

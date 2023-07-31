@@ -15,47 +15,84 @@ struct CharacterDetailCard: View {
             Text(character.name)
                 .font(.title)
                 .fontWeight(.bold)
+                .foregroundColor(.red)
             
-            Text("Status: \(character.status)")
-                .font(.headline)
+            HStack {
+                Text("Status:")
+                    .labelStyle()
+                Text(character.status)
+                    .font(.headline)
+            }
             
-            Text("Species: \(character.species)")
-                .font(.headline)
+            HStack {
+                Text("Species:")
+                    .labelStyle()
+                Text(character.species)
+                    .font(.headline)
+            }
             
-            Text("Type: \(character.type)")
-                .font(.headline)
+            HStack {
+                Text("Type:")
+                    .labelStyle()
+                Text(character.type)
+                    .font(.headline)
+            }
             
-            Text("Gender: \(character.gender)")
-                .font(.headline)
+            HStack {
+                Text("Gender:")
+                    .labelStyle()
+                Text(character.gender)
+                    .font(.headline)
+            }
             
             VStack(alignment: .leading, spacing: 4) {
                 Text("Origin:")
-                    .font(.headline)
+                    .labelStyle()
                 Text(character.origin.name)
             }
             
             VStack(alignment: .leading, spacing: 4) {
                 Text("Location:")
-                    .font(.headline)
+                    .labelStyle()
                 Text(character.location.name)
             }
             
-            Text("Episodes:")
-                .font(.headline)
-            VStack(alignment: .leading, spacing: 4) {
-                ForEach(character.episode, id: \.self) { episodeURL in
-                    Text(episodeURL)
+            HStack {
+                Text("Episodes:")
+                    .labelStyle()
+                VStack(alignment: .leading, spacing: 4) {
+                    ForEach(character.episode, id: \.self) { episodeURL in
+                        Text(episodeURL)
+                    }
                 }
             }
             
-            Text("Created: \(character.created)")
-                .font(.caption)
+            HStack {
+                Text("Created:")
+                    .labelStyle()
+                Text(character.created)
+                    .font(.caption)
+            }
         }
         .padding()
         .background(Color.white)
         .cornerRadius(10)
         .shadow(radius: 10)
         .padding()
+    }
+}
+
+struct LabelStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.headline)
+            .foregroundColor(.red)
+    }
+}
+
+extension View {
+    func labelStyle() -> some View {
+        self.modifier(LabelStyle())
     }
 }
 
