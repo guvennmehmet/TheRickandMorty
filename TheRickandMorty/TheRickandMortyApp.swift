@@ -14,8 +14,9 @@ struct TheRickandMortyApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                CharactersView(characterViewModel: characterViewModel)
-                    .navigationBarHidden(true)
+              /*  CharactersView(characterViewModel: characterViewModel)
+                    .navigationBarHidden(true) */
+                TabBar()
             }
         }
     }

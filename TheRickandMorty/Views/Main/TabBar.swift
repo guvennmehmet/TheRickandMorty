@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TabBar: View {
+    @StateObject private var characterViewModel = CharacterViewModel()
+    
     var body: some View {
         TabView {
             HomeView()
@@ -15,10 +17,10 @@ struct TabBar: View {
                     Label("Home", systemImage: "house")
                 }
             
-          /*  CharactersView()
+            CharactersView(characterViewModel: characterViewModel)
                 .tabItem {
                     Label("Characters" , systemImage: "person.2")
-                } */
+                }
             
             LocationsView()
                 .tabItem {

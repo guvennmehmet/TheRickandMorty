@@ -11,6 +11,7 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             Text("home view")
+                .navigationTitle("Home")
         }
         .navigationViewStyle(.stack)
     }
