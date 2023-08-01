@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TabBar: View {
     @StateObject private var characterViewModel = CharacterViewModel()
+    @StateObject private var locationViewModel = LocationViewModel()
     
     var body: some View {
         TabView {
@@ -22,7 +23,7 @@ struct TabBar: View {
                     Label("Characters" , systemImage: "person.2")
                 }
             
-            LocationsView()
+            LocationsView(locationViewModel: locationViewModel)
                 .tabItem {
                     Label("Locations", systemImage: "mappin.circle")
                 }

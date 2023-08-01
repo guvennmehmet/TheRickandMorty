@@ -8,17 +8,26 @@
 import SwiftUI
 
 struct LocationsView: View {
+    @ObservedObject var locationViewModel: LocationViewModel
+    
     var body: some View {
         NavigationView {
-            Text("location screen")
-                .navigationTitle("Locations")
+            ScrollView {
+                LocationList(locationViewModel: locationViewModel)
+            }
+            .navigationTitle("Locations")
         }
         .navigationViewStyle(.stack)
+        .onAppear {
+            locationViewModel.fetchLocations()
+        }
     }
 }
 
 struct LocationsView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationsView()
+        let viewModel = LocationViewModel()
+        
+        return LocationsView(locationViewModel: viewModel)
     }
 }
