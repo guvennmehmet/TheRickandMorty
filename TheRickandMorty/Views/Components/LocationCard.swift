@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LocationCard: View {
-    var location: LocationModel
+    var location: Location
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -57,7 +57,7 @@ extension Text {
 
 struct LocationCard_Previews: PreviewProvider {
     static var previews: some View {
-        let location = LocationModel(id: 1, name: "Earth", type: "Planet", dimension: "C-137", residents: [], url: "https://rickandmortyapi.com/api/location/1", created: "2023-08-01T12:00:00Z")
+        let location = Location(id: 1, name: "Earth", type: "Planet", dimension: "C-137", residents: [], url: "https://rickandmortyapi.com/api/location/1", created: "2023-08-01T12:00:00Z")
         
         LocationCard(location: location)
     }
