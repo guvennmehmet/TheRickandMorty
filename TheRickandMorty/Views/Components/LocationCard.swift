@@ -12,7 +12,7 @@ struct LocationCard: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            LabelTextView(label: "Name: ", value: location.name)
+            //LabelTextView(label: "Name: ", value: location.name)
             LabelTextView(label: "Type: ", value: location.type)
             LabelTextView(label: "Dimension: ", value: location.dimension)
             LabelTextView(label: "Created: ", value: location.created)
