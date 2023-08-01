@@ -30,18 +30,18 @@ struct Character: Codable, Identifiable {
     let created: String
     
     enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case name = "name"
-        case status = "status"
-        case species = "species"
-        case type = "type"
-        case gender = "gender"
-        case origin = "origin"
-        case location = "location"
-        case image = "image"
-        case episode = "episode"
-        case url = "url"
-        case created = "created"
+        case id
+        case name
+        case status
+        case species
+        case type
+        case gender
+        case origin
+        case location
+        case image
+        case episode
+        case url
+        case created
     }
 }
 

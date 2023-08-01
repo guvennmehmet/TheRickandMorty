@@ -13,12 +13,16 @@ struct LocationModel: Codable, Identifiable {
     let type: String
     let dimension: String
     let residents: [String]
+    let url: String
+    let created: String
     
     enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case name = "name"
-        case type = "type"
-        case dimension = "dimension"
-        case residents = "residents"
+        case id 
+        case name
+        case type
+        case dimension
+        case residents
+        case url
+        case created
     }
 }
