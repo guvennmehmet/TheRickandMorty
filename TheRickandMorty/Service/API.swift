@@ -8,7 +8,7 @@
 import Foundation
 
 enum API {
-    static let baseURL = "https://rickandmortyapi.com/api/character"
+    static let baseURL = "https://rickandmortyapi.com/api"
     
     static var characterURL: URL {
         guard let url = URL(string: baseURL) else {
