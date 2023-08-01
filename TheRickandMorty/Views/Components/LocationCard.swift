@@ -52,6 +52,7 @@ extension Text {
     func styleValue() -> some View {
         self
             .font(.subheadline)
+            .foregroundColor(.black)
     }
 }
 
