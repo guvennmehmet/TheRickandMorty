@@ -46,4 +46,3 @@ struct EpisodeResponse: Codable {
     let results: [Episode]
     let info: PageInfo
 }
-

@@ -8,17 +8,26 @@
 import SwiftUI
 
 struct EpisodesView: View {
+    @ObservedObject var episodeViewModel: EpisodeViewModel
+    
     var body: some View {
         NavigationView {
-            Text("episode screen")
-                .navigationTitle("Episodes")
+            ScrollView {
+                EpisodeList(episodeViewModel: episodeViewModel)
+            }
+            .navigationTitle("Episodes")
         }
         .navigationViewStyle(.stack)
+        .onAppear {
+            episodeViewModel.fetchEpisodes()
+        }
     }
 }
 
-struct EpisodesView_Previews: PreviewProvider {
+struct EpisodessView_Previews: PreviewProvider {
     static var previews: some View {
-        EpisodesView()
+        let viewModel = EpisodeViewModel()
+        
+        return EpisodesView(episodeViewModel: viewModel)
     }
 }

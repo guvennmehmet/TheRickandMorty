@@ -19,13 +19,13 @@ struct Episode: Codable, Identifiable {
         case id
         case name
         case airDate = "air_date"
-        case episodeNumber = "episode_number"
+        case episodeNumber = "episode"
         case url
         case created
     }
 }
 
-struct EpisodeList: Codable {
+struct EpisodesList: Codable {
     let results: [Episode]
 }
 
