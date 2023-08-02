@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CharacterView: View {
+struct CharacterDetailView: View {
     @ObservedObject var characterViewModel: CharacterViewModel
     var characterID: Int
     
@@ -59,7 +59,7 @@ struct CharacterView_Previews: PreviewProvider {
         viewModel.fetchCharacters()
         
         return NavigationView {
-            CharacterView(characterViewModel: viewModel, characterID: 1)
+            CharacterDetailView(characterViewModel: viewModel, characterID: 1)
         }
     }
 }

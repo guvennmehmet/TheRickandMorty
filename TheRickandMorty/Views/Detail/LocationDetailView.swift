@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LocationView: View {
+struct LocationDetailView: View {
     @ObservedObject var locationViewModel: LocationViewModel
     var locationID: Int
     
@@ -34,7 +34,7 @@ struct LocationView_Previews: PreviewProvider {
         viewModel.fetchLocations()
         
         return NavigationView {
-            LocationView(locationViewModel: viewModel, locationID: 1)
+            LocationDetailView(locationViewModel: viewModel, locationID: 1)
         }
     }
 }

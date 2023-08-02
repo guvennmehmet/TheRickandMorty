@@ -21,7 +21,7 @@ struct CharacterList: View {
             
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
                 ForEach(characterViewModel.characters) { character in
-                    NavigationLink(destination: CharacterView(characterViewModel: characterViewModel, characterID: character.id)) {
+                    NavigationLink(destination: CharacterDetailView(characterViewModel: characterViewModel, characterID: character.id)) {
                         CharacterCard(characterViewModel: characterViewModel, character: character)
                     }
                 }

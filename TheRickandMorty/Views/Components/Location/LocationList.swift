@@ -23,7 +23,7 @@ struct LocationList: View {
             ScrollView {
                 VStack(spacing: 15) {
                     ForEach(locationViewModel.locations) { location in
-                        NavigationLink(destination: LocationView(locationViewModel: locationViewModel, locationID: location.id)) {
+                        NavigationLink(destination: LocationDetailView(locationViewModel: locationViewModel, locationID: location.id)) {
                             LocationCard(location: location)
                         }
                     }

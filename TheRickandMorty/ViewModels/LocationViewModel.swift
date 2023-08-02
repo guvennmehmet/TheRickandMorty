@@ -12,9 +12,10 @@ class LocationViewModel: ObservableObject {
     @Published var locations: [Location] = []
 
     private var cancellable: AnyCancellable?
+    private var currentPage = 1
 
     func fetchLocations() {
-        let url = URL(string: "\(API.baseURL)/location")!
+        let url = URL(string: "\(API.baseURL)/location?page=\(currentPage)")!
 
         self.cancellable = URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }
@@ -28,10 +29,14 @@ class LocationViewModel: ObservableObject {
                     print("Error decoding data: \(error)")
                 }
             }, receiveValue: { response in
-                self.locations = response.results
+                if !response.results.isEmpty {
+                    self.locations.append(contentsOf: response.results)
+                    self.currentPage += 1
+                    self.fetchLocations()
+                }
             })
     }
-
+    
     func getLocationById(_ id: Int) -> Location? {
         return locations.first { $0.id == id }
     }

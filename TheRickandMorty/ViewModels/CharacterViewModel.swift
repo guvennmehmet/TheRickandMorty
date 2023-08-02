@@ -76,7 +76,3 @@ struct CharacterResponse: Codable {
     let results: [Character]
     let info: PageInfo
 }
-
-struct PageInfo: Codable {
-    let next: String?
-}

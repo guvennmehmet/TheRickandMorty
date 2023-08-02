@@ -26,3 +26,7 @@ struct Location: Codable, Identifiable {
         case created
     }
 }
+
+struct LocationsList: Codable {
+    let results: [Location]
+}
