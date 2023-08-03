@@ -19,7 +19,7 @@ struct EpisodeDetailView: View {
     var body: some View {
         if let episode = episodeViewModel.getEpisodeById(episodeID) {
             ScrollView {
-                EpisodeCard(episode: episode)
+                EpisodeDetailCard(episode: episode)
             }
             .navigationTitle(episode.name)
         } else {
