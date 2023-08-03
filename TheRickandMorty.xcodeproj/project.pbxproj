@@ -22,6 +22,7 @@
 		704BFD7C2A791DD900D6E39C /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704BFD7B2A791DD900D6E39C /* LocationDetailView.swift */; };
 		704BFD7E2A7924BA00D6E39C /* LocationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704BFD7D2A7924BA00D6E39C /* LocationList.swift */; };
 		706EA5282A6E5E17002AF3C2 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706EA5272A6E5E17002AF3C2 /* CharacterModel.swift */; };
+		708BE81D2A7B7851006AEF58 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708BE81C2A7B7851006AEF58 /* Color.swift */; };
 		709812962A738B8D00ACBDDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709812952A738B8D00ACBDDF /* ContentView.swift */; };
 		709812982A738BAA00ACBDDF /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709812972A738BAA00ACBDDF /* TabBar.swift */; };
 		7098129C2A738BF100ACBDDF /* EpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7098129B2A738BF100ACBDDF /* EpisodesView.swift */; };
@@ -53,6 +54,7 @@
 		704BFD7B2A791DD900D6E39C /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		704BFD7D2A7924BA00D6E39C /* LocationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationList.swift; sourceTree = "<group>"; };
 		706EA5272A6E5E17002AF3C2 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		708BE81C2A7B7851006AEF58 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		709812952A738B8D00ACBDDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		709812972A738BAA00ACBDDF /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		7098129B2A738BF100ACBDDF /* EpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesView.swift; sourceTree = "<group>"; };
@@ -125,6 +127,14 @@
 				7010A45E2A7A6A1D006F3B91 /* PageInfo.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		708BE81B2A7B77F6006AEF58 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				708BE81C2A7B7851006AEF58 /* Color.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		7098128E2A738A6C00ACBDDF /* Main */ = {
@@ -202,9 +212,10 @@
 			children = (
 				70FD1FF42A6AC412000E02A8 /* TheRickandMortyApp.swift */,
 				702908E72A77E6D3008AF4C4 /* Service */,
-				70F190402A6E518F001F6266 /* ViewModels */,
 				706EA5262A6E5DA4002AF3C2 /* Models */,
 				70F1903F2A6E518B001F6266 /* Views */,
+				70F190402A6E518F001F6266 /* ViewModels */,
+				708BE81B2A7B77F6006AEF58 /* Resources */,
 				70FD1FF82A6AC415000E02A8 /* Assets.xcassets */,
 				70FD1FFA2A6AC415000E02A8 /* Preview Content */,
 			);
@@ -306,6 +317,7 @@
 				709812A82A73AEEE00ACBDDF /* CharacterCard.swift in Sources */,
 				7010A4682A7A860A006F3B91 /* EpisodeList.swift in Sources */,
 				702908E32A77CA0C008AF4C4 /* CharacterViewModel.swift in Sources */,
+				708BE81D2A7B7851006AEF58 /* Color.swift in Sources */,
 				709812962A738B8D00ACBDDF /* ContentView.swift in Sources */,
 				7010A45F2A7A6A1D006F3B91 /* PageInfo.swift in Sources */,
 				704BFD7E2A7924BA00D6E39C /* LocationList.swift in Sources */,
