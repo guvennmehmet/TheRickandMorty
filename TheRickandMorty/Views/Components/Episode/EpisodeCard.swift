@@ -9,17 +9,25 @@ import SwiftUI
 
 struct EpisodeCard: View {
     var episode: Episode
+    let colorTheme = ColorTheme()
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            LabelTextView(label: "Name: ", value: episode.name)
-            LabelTextView(label: "Air Date: ", value: episode.airDate)
-            LabelTextView(label: "Episode: ", value: episode.episodeNumber)
-            LabelTextView(label: "Created: ", value: episode.created)
+        HStack {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Episode \(episode.episodeNumber)")
+                    .episodeNumberStyle()
+                Text(episode.name)
+                    .episodeNameStyle()
+                Text(episode.airDate)
+                    .airDateStyle()
+            }
+            Spacer()
         }
-        .padding()
-        .background(Color.white)
-        .cornerRadius(10)
+        .padding() 
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .strokeBorder(colorTheme.green, lineWidth: 2)
+        )
         .shadow(color: Color.gray.opacity(0.7), radius: 4, x: 0, y: 4)
     }
 }

@@ -53,7 +53,7 @@ struct CharacterDetailView: View {
     }
 }
 
-struct CharacterView_Previews: PreviewProvider {
+struct CharacterDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = CharacterViewModel()
         viewModel.fetchCharacters()

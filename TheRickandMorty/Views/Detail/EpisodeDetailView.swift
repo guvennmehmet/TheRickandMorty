@@ -28,7 +28,7 @@ struct EpisodeDetailView: View {
     }
 }
 
-struct EpisodeView_Previews: PreviewProvider {
+struct EpisodeDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = EpisodeViewModel()
         viewModel.fetchEpisodes()

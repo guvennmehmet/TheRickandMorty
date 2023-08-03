@@ -28,7 +28,7 @@ struct LocationDetailView: View {
     }
 }
 
-struct LocationView_Previews: PreviewProvider {
+struct LocationDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = LocationViewModel()
         viewModel.fetchLocations()
