@@ -24,9 +24,6 @@ struct EpisodeDetailCard: View {
                     .airDateStyle()
                 Text(episode.created)
                     .airDateStyle()
-                Text("----------------------------")
-                Text("----------------------------")
-                Text("buraya bölüm karakterleri gelecek")
             }
             Spacer()
         }
@@ -36,6 +33,7 @@ struct EpisodeDetailCard: View {
 
 struct EpisodeDetailCard_Previews: PreviewProvider {
     static var previews: some View {
+        
         
         let sampleEpisode = Episode(
             id: 1,
@@ -48,6 +46,7 @@ struct EpisodeDetailCard_Previews: PreviewProvider {
         
         return EpisodeDetailCard(episode: sampleEpisode)
             .previewLayout(.sizeThatFits)
+         
         
         /*
         let viewModel = EpisodeViewModel()
@@ -61,5 +60,6 @@ struct EpisodeDetailCard_Previews: PreviewProvider {
                 .previewLayout(.sizeThatFits))
         }
         */
+         
     }
 }

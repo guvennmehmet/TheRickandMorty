@@ -27,6 +27,8 @@
 		708BE8252A7B97B6006AEF58 /* EpisodeTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708BE8242A7B97B6006AEF58 /* EpisodeTextStyle.swift */; };
 		708BE8272A7B9D97006AEF58 /* EpisodeDetailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708BE8262A7B9D97006AEF58 /* EpisodeDetailCard.swift */; };
 		708BE82B2A7B9F7A006AEF58 /* EpisodeCardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708BE82A2A7B9F7A006AEF58 /* EpisodeCardStyle.swift */; };
+		708BE82D2A7BB90B006AEF58 /* EpisodeDetailListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708BE82C2A7BB90B006AEF58 /* EpisodeDetailListCard.swift */; };
+		708BE82F2A7BC487006AEF58 /* EpisodeCharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708BE82E2A7BC487006AEF58 /* EpisodeCharacterViewModel.swift */; };
 		709812962A738B8D00ACBDDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709812952A738B8D00ACBDDF /* ContentView.swift */; };
 		709812982A738BAA00ACBDDF /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709812972A738BAA00ACBDDF /* TabBar.swift */; };
 		7098129C2A738BF100ACBDDF /* EpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7098129B2A738BF100ACBDDF /* EpisodesView.swift */; };
@@ -64,6 +66,8 @@
 		708BE8242A7B97B6006AEF58 /* EpisodeTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTextStyle.swift; sourceTree = "<group>"; };
 		708BE8262A7B9D97006AEF58 /* EpisodeDetailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailCard.swift; sourceTree = "<group>"; };
 		708BE82A2A7B9F7A006AEF58 /* EpisodeCardStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCardStyle.swift; sourceTree = "<group>"; };
+		708BE82C2A7BB90B006AEF58 /* EpisodeDetailListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailListCard.swift; sourceTree = "<group>"; };
+		708BE82E2A7BC487006AEF58 /* EpisodeCharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCharacterViewModel.swift; sourceTree = "<group>"; };
 		709812952A738B8D00ACBDDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		709812972A738BAA00ACBDDF /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		7098129B2A738BF100ACBDDF /* EpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesView.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 				7010A4652A7A8289006F3B91 /* EpisodeCard.swift */,
 				7010A4672A7A860A006F3B91 /* EpisodeList.swift */,
 				708BE8262A7B9D97006AEF58 /* EpisodeDetailCard.swift */,
+				708BE82C2A7BB90B006AEF58 /* EpisodeDetailListCard.swift */,
 			);
 			path = Episode;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 				702908E22A77CA0C008AF4C4 /* CharacterViewModel.swift */,
 				704BFD792A79181E00D6E39C /* LocationViewModel.swift */,
 				7010A4622A7A809B006F3B91 /* EpisodeViewModel.swift */,
+				708BE82E2A7BC487006AEF58 /* EpisodeCharacterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -344,6 +350,7 @@
 				704BFD7A2A79181E00D6E39C /* LocationViewModel.swift in Sources */,
 				704BFD742A79001200D6E39C /* LocationCard.swift in Sources */,
 				7010A46C2A7A916B006F3B91 /* EpisodeDetailView.swift in Sources */,
+				708BE82D2A7BB90B006AEF58 /* EpisodeDetailListCard.swift in Sources */,
 				709812AC2A73CE8300ACBDDF /* CharacterDetailView.swift in Sources */,
 				704BFD702A78FD9300D6E39C /* LocationModel.swift in Sources */,
 				709812A82A73AEEE00ACBDDF /* CharacterCard.swift in Sources */,
@@ -358,6 +365,7 @@
 				709812A02A738C0A00ACBDDF /* CharactersView.swift in Sources */,
 				702908DF2A777DD7008AF4C4 /* CharacterDetailCard.swift in Sources */,
 				7098129E2A738BFB00ACBDDF /* LocationsView.swift in Sources */,
+				708BE82F2A7BC487006AEF58 /* EpisodeCharacterViewModel.swift in Sources */,
 				704BFD7C2A791DD900D6E39C /* LocationDetailView.swift in Sources */,
 				7010A4632A7A809B006F3B91 /* EpisodeViewModel.swift in Sources */,
 				709812982A738BAA00ACBDDF /* TabBar.swift in Sources */,

@@ -20,7 +20,11 @@ struct EpisodeDetailView: View {
         if let episode = episodeViewModel.getEpisodeById(episodeID) {
             ScrollView {
                 EpisodeDetailCard(episode: episode)
+                
+                EpisodeDetailListCard(episode: episode)
+                    .environmentObject(CharacterViewModel())
             }
+            .padding(.horizontal)
             .navigationTitle(episode.name)
         } else {
             Text("no_data")

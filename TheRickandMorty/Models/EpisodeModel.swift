@@ -28,4 +28,3 @@ struct Episode: Codable, Identifiable {
 struct EpisodesList: Codable {
     let results: [Episode]
 }
-
