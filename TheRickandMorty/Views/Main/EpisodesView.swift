@@ -15,7 +15,7 @@ struct EpisodesView: View {
             ScrollView {
                 EpisodeList(episodeViewModel: episodeViewModel)
             }
-            .navigationTitle("Episodes")
+            .navigationTitle("episode_title")
         }
         .navigationViewStyle(.stack)
         .onAppear {

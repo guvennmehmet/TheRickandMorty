@@ -15,7 +15,7 @@ struct CharactersView: View {
             ScrollView {
                 CharacterList(characterViewModel: characterViewModel) 
             }
-            .navigationTitle("Characters")
+            .navigationTitle("character_title")
         }
         .navigationViewStyle(.stack)
         .onAppear {

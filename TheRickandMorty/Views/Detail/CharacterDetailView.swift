@@ -48,7 +48,7 @@ struct CharacterDetailView: View {
             }
             .navigationTitle(character.name)
         } else {
-            Text("Character not found.")
+            Text("no_data")
         }
     }
 }

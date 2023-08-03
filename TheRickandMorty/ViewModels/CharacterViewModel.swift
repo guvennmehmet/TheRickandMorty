@@ -41,7 +41,7 @@ class CharacterViewModel: ObservableObject {
     }
 
     private func fetchRemainingCharacters(page: Int) {
-        let url = URL(string: "\(API.baseURL)/character/?page=\(page)")!
+        let url = URL(string: "\(API.characterURL)/?page=\(page)")!
 
         self.cancellable = URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }

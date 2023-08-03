@@ -11,7 +11,7 @@ struct FavoritesView: View {
     var body: some View {
         NavigationView {
             Text("favorite screen")
-                .navigationTitle("Favorites")
+                .navigationTitle("favorite_title")
         }
         .navigationViewStyle(.stack)
     }

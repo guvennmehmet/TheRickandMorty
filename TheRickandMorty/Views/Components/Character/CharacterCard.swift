@@ -58,7 +58,7 @@ struct CharacterCard_Previews: PreviewProvider {
         if let character = viewModel.getCharacterById(1) {
             return AnyView(CharacterCard(characterViewModel: viewModel, character: character))
         } else {
-            return AnyView(Text("Character not found."))
+            return AnyView(Text("no_data"))
         }
     }
 }

@@ -16,27 +16,27 @@ struct TabBar: View {
         TabView {
             HomeView()
                 .tabItem {
-                    Label("Home", systemImage: "house")
+                    Label("home_title", systemImage: "house")
                 }
             
             CharactersView(characterViewModel: characterViewModel)
                 .tabItem {
-                    Label("Characters" , systemImage: "person.2")
+                    Label("character_title" , systemImage: "person.2")
                 }
             
             LocationsView(locationViewModel: locationViewModel)
                 .tabItem {
-                    Label("Locations", systemImage: "mappin.circle")
+                    Label("location_title", systemImage: "mappin.circle")
                 }
             
             EpisodesView(episodeViewModel: episodeViewModel)
                 .tabItem {
-                    Label("Episodes", systemImage: "tv")
+                    Label("episode_title", systemImage: "tv")
                 }
             
             FavoritesView()
                 .tabItem {
-                    Label("Favorites", systemImage: "star")
+                    Label("favorite_title", systemImage: "star")
                 }
         }
     }

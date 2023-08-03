@@ -23,7 +23,7 @@ struct LocationDetailView: View {
             }
             .navigationTitle(location.name)
         } else {
-            Text("Location not found.")
+            Text("no_data")
         }
     }
 }

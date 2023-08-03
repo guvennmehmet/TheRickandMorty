@@ -23,7 +23,7 @@ struct EpisodeDetailView: View {
             }
             .navigationTitle(episode.name)
         } else {
-            Text("Episode not found.")
+            Text("no_data")
         }
     }
 }

@@ -15,7 +15,7 @@ struct LocationsView: View {
             ScrollView {
                 LocationList(locationViewModel: locationViewModel)
             }
-            .navigationTitle("Locations")
+            .navigationTitle("location_title")
         }
         .navigationViewStyle(.stack)
         .onAppear {
