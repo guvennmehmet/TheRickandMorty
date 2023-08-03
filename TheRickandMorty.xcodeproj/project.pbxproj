@@ -29,6 +29,8 @@
 		708BE82B2A7B9F7A006AEF58 /* EpisodeCardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708BE82A2A7B9F7A006AEF58 /* EpisodeCardStyle.swift */; };
 		708BE82D2A7BB90B006AEF58 /* EpisodeDetailListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708BE82C2A7BB90B006AEF58 /* EpisodeDetailListCard.swift */; };
 		708BE82F2A7BC487006AEF58 /* EpisodeCharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708BE82E2A7BC487006AEF58 /* EpisodeCharacterViewModel.swift */; };
+		708BE8322A7BD04D006AEF58 /* LocationTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708BE8312A7BD04D006AEF58 /* LocationTextStyle.swift */; };
+		708BE8342A7BD09E006AEF58 /* LocationCardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708BE8332A7BD09E006AEF58 /* LocationCardStyle.swift */; };
 		709812962A738B8D00ACBDDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709812952A738B8D00ACBDDF /* ContentView.swift */; };
 		709812982A738BAA00ACBDDF /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709812972A738BAA00ACBDDF /* TabBar.swift */; };
 		7098129C2A738BF100ACBDDF /* EpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7098129B2A738BF100ACBDDF /* EpisodesView.swift */; };
@@ -68,6 +70,8 @@
 		708BE82A2A7B9F7A006AEF58 /* EpisodeCardStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCardStyle.swift; sourceTree = "<group>"; };
 		708BE82C2A7BB90B006AEF58 /* EpisodeDetailListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailListCard.swift; sourceTree = "<group>"; };
 		708BE82E2A7BC487006AEF58 /* EpisodeCharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCharacterViewModel.swift; sourceTree = "<group>"; };
+		708BE8312A7BD04D006AEF58 /* LocationTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTextStyle.swift; sourceTree = "<group>"; };
+		708BE8332A7BD09E006AEF58 /* LocationCardStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCardStyle.swift; sourceTree = "<group>"; };
 		709812952A738B8D00ACBDDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		709812972A738BAA00ACBDDF /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		7098129B2A738BF100ACBDDF /* EpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesView.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 		708BE8282A7B9F5F006AEF58 /* Style */ = {
 			isa = PBXGroup;
 			children = (
+				708BE8302A7BD018006AEF58 /* Location */,
 				708BE8292A7B9F69006AEF58 /* Episode */,
 			);
 			path = Style;
@@ -168,6 +173,15 @@
 				708BE82A2A7B9F7A006AEF58 /* EpisodeCardStyle.swift */,
 			);
 			path = Episode;
+			sourceTree = "<group>";
+		};
+		708BE8302A7BD018006AEF58 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				708BE8312A7BD04D006AEF58 /* LocationTextStyle.swift */,
+				708BE8332A7BD09E006AEF58 /* LocationCardStyle.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		7098128E2A738A6C00ACBDDF /* Main */ = {
@@ -363,8 +377,10 @@
 				708BE8272A7B9D97006AEF58 /* EpisodeDetailCard.swift in Sources */,
 				704BFD7E2A7924BA00D6E39C /* LocationList.swift in Sources */,
 				709812A02A738C0A00ACBDDF /* CharactersView.swift in Sources */,
+				708BE8342A7BD09E006AEF58 /* LocationCardStyle.swift in Sources */,
 				702908DF2A777DD7008AF4C4 /* CharacterDetailCard.swift in Sources */,
 				7098129E2A738BFB00ACBDDF /* LocationsView.swift in Sources */,
+				708BE8322A7BD04D006AEF58 /* LocationTextStyle.swift in Sources */,
 				708BE82F2A7BC487006AEF58 /* EpisodeCharacterViewModel.swift in Sources */,
 				704BFD7C2A791DD900D6E39C /* LocationDetailView.swift in Sources */,
 				7010A4632A7A809B006F3B91 /* EpisodeViewModel.swift in Sources */,
