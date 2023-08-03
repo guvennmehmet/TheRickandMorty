@@ -9,11 +9,7 @@ import Foundation
 
 enum API {
     static let baseURL = "https://rickandmortyapi.com/api"
-    
-    static var characterURL: URL {
-        guard let url = URL(string: baseURL) else {
-            fatalError("Invalid URL: \(baseURL)")
-        }
-        return url
-    }
+    static let characterURL = "\(baseURL)/character"
+    static let locationURL = "\(baseURL)/location"
+    static let episodeURL = "\(baseURL)/episode"
 }

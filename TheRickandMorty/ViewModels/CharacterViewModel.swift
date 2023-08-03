@@ -14,7 +14,7 @@ class CharacterViewModel: ObservableObject {
     private var cancellable: AnyCancellable?
 
     func fetchCharacters() {
-        let url = URL(string: "\(API.baseURL)/character/?page=1")!
+        let url = URL(string: "\(API.characterURL)/?page=1")!
 
         self.cancellable = URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }

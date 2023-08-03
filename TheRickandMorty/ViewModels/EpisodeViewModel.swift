@@ -15,7 +15,7 @@ class EpisodeViewModel: ObservableObject {
     private var currentPage = 1
 
     func fetchEpisodes() {
-        let url = URL(string: "\(API.baseURL)/episode?page=\(currentPage)")!
+        let url = URL(string: "\(API.episodeURL)/?page=\(currentPage)")!
 
         self.cancellable = URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }

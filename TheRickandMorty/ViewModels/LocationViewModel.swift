@@ -15,7 +15,7 @@ class LocationViewModel: ObservableObject {
     private var currentPage = 1
 
     func fetchLocations() {
-        let url = URL(string: "\(API.baseURL)/location?page=\(currentPage)")!
+        let url = URL(string: "\(API.locationURL)/?page=\(currentPage)")!
 
         self.cancellable = URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }
