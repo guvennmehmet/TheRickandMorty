@@ -25,6 +25,17 @@ struct Episode: Codable, Identifiable {
         case created
         case characterURLs = "characters"
     }
+    var formattedCreatedDate: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+
+        if let date = formatter.date(from: created) {
+            formatter.dateFormat = "dd-MM-yyyy"
+            return formatter.string(from: date)
+        }
+
+        return created
+    }
 }
 
 struct EpisodesList: Codable {

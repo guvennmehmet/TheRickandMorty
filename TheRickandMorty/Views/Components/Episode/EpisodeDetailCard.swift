@@ -12,12 +12,18 @@ struct EpisodeDetailCard: View {
     let colorTheme = ColorTheme()
     
     var body: some View {
-        List {
+        VStack(alignment: .leading, spacing: 10) {
             CustomListRowView(rowLabel: "Number", rowIcon: "number", rowContent: episode.episodeNumber, rowTintColor: .blue)
-            CustomListRowView(rowLabel: "Name", rowIcon: "tv", rowContent: episode.name, rowTintColor: .red)
+            Divider()
+            CustomListRowView(rowLabel: "Name", rowIcon: "play.tv", rowContent: episode.name, rowTintColor: .red)
+            Divider()
             CustomListRowView(rowLabel: "Date", rowIcon: "calendar", rowContent: episode.airDate, rowTintColor: .green)
-            CustomListRowView(rowLabel: "Created", rowIcon: "clock", rowContent: episode.created, rowTintColor: .orange)
-        }
+            Divider()
+            CustomListRowView(rowLabel: "Url", rowIcon: "link", rowContent: episode.url, rowTintColor: .purple)
+            Divider()
+            CustomListRowView(rowLabel: "Created", rowIcon: "clock", rowContent: episode.formattedCreatedDate, rowTintColor: .orange)
+            }
+        .padding(16)
     }
 }
 

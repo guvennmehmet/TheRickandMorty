@@ -19,10 +19,12 @@ struct EpisodeDetailView: View {
     var body: some View {
         if let episode = episodeViewModel.getEpisodeById(episodeID) {
             ScrollView {
-                EpisodeDetailCard(episode: episode)
-                
-                EpisodeDetailListCard(episode: episode)
-                    .environmentObject(CharacterViewModel())
+                VStack {
+                    EpisodeDetailCard(episode: episode)
+                        .padding(.bottom) 
+                    EpisodeDetailListCard(episode: episode)
+                        .environmentObject(CharacterViewModel())
+                }
             }
             .padding(.horizontal)
             .navigationTitle(episode.name)

@@ -15,13 +15,17 @@ struct EpisodeDetailListCard: View {
     var body: some View {
         VStack {
             HStack {
-                Text("\(episodeCharacterViewModel.characters.count) \(episodeCharacterViewModel.characters.count > 1 ? "characters" : "character")")
+                Text(LocalizedStringKey("episode_characters"))
+                    .font(.headline)
+                    .fontWeight(.medium)
+                    .opacity(0.7)
+                Text("(\(episodeCharacterViewModel.characters.count))")
                     .font(.headline)
                     .fontWeight(.medium)
                     .opacity(0.7)
                 Spacer()
             }
-
+            
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15), GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
                 ForEach(episodeCharacterViewModel.characters) { character in
                     CharacterCard(characterViewModel: characterViewModel, character: character)
