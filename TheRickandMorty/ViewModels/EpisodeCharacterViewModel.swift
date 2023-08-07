@@ -13,26 +13,35 @@ class EpisodeCharacterViewModel: ObservableObject {
 
     private var cancellables: Set<AnyCancellable> = []
 
-    func fetchCharacters(for episodeID: Int) {
-        guard let url = URL(string: "\(API.characterURL)/?episode=\(episodeID)") else {
-            print("Invalid URL for episodeID: \(episodeID)")
-            return
+    func fetchCharacters(for episode: Episode) {
+        let dispatchGroup = DispatchGroup()
+        var allCharacters: [Character] = []
+
+        for characterURL in episode.characterURLs {
+            guard let url = URL(string: characterURL) else {
+                continue
+            }
+            dispatchGroup.enter()
+            URLSession.shared.dataTaskPublisher(for: url)
+                .map(\.data)
+                .decode(type: Character.self, decoder: JSONDecoder())
+                .receive(on: DispatchQueue.main)
+                .sink(receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        break
+                    case .failure(let error):
+                        print("Error decoding character data: \(error)")
+                    }
+                }, receiveValue: { character in
+                    allCharacters.append(character)
+                    dispatchGroup.leave()
+                })
+                .store(in: &cancellables)
         }
 
-        URLSession.shared.dataTaskPublisher(for: url)
-            .map { $0.data }
-            .decode(type: CharacterResponse.self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    print("Error decoding data: \(error)")
-                }
-            }, receiveValue: { response in
-                self.characters = response.results
-            })
-            .store(in: &cancellables)
+        dispatchGroup.notify(queue: .main) {
+            self.characters = allCharacters
+        }
     }
 }

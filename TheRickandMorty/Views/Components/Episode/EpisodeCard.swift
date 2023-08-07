@@ -29,7 +29,7 @@ struct EpisodeCard: View {
 
 struct EpisodeCard_Previews: PreviewProvider {
     static var previews: some View {
-        let episode = Episode(id: 1, name: "Pilot", airDate: "December 2, 2013", episodeNumber: "S01E01", url: "https://rickandmortyapi.com/api/episode/1", created: "2023-08-02T12:00:00Z")
+        let episode = Episode(id: 1, name: "Pilot", airDate: "December 2, 2013", episodeNumber: "S01E01", url: "https://rickandmortyapi.com/api/episode/1", created: "2023-08-02T12:00:00Z", characterURLs: [])
         
         return EpisodeCard(episode: episode)
     }

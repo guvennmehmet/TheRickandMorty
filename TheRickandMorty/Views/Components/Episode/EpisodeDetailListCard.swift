@@ -31,7 +31,7 @@ struct EpisodeDetailListCard: View {
         }
         .padding(.horizontal)
         .onAppear {
-            episodeCharacterViewModel.fetchCharacters(for: episode.id)
+            episodeCharacterViewModel.fetchCharacters(for: episode)
         }
     }
 }

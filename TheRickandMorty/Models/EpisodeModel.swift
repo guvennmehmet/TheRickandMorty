@@ -14,6 +14,7 @@ struct Episode: Codable, Identifiable {
     let episodeNumber: String
     let url: String
     let created: String
+    let characterURLs: [String]
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -22,6 +23,7 @@ struct Episode: Codable, Identifiable {
         case episodeNumber = "episode"
         case url
         case created
+        case characterURLs = "characters"
     }
 }
 
