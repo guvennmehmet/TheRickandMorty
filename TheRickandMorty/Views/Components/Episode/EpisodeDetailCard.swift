@@ -12,22 +12,12 @@ struct EpisodeDetailCard: View {
     let colorTheme = ColorTheme()
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Episode \(episode.episodeNumber)")
-                    .firstTitleTextStyle()
-                Text(episode.name)
-                    .secondTitleTextStyle()
-                Text(episode.airDate)
-                    .italicTextStyle()
-                Text(episode.url)
-                    .italicTextStyle()
-                Text(episode.created)
-                    .italicTextStyle()
-            }
-            Spacer()
+        List {
+            CustomListRowView(rowLabel: "Number", rowIcon: "number", rowContent: episode.episodeNumber, rowTintColor: .blue)
+            CustomListRowView(rowLabel: "Name", rowIcon: "tv", rowContent: episode.name, rowTintColor: .red)
+            CustomListRowView(rowLabel: "Date", rowIcon: "calendar", rowContent: episode.airDate, rowTintColor: .green)
+            CustomListRowView(rowLabel: "Created", rowIcon: "clock", rowContent: episode.created, rowTintColor: .orange)
         }
-        .modifier(EpisodeCardStyle())
     }
 }
 
@@ -40,7 +30,7 @@ struct EpisodeDetailCard_Previews: PreviewProvider {
             name: "Sample Episode",
             airDate: "August 3, 2023",
             episodeNumber: "S02E03",
-            url: "https://rickandmortyapi.com/api/episode/1",
+            url: "",
             created: "2023-08-03T12:00:00Z",
             characterURLs: []
 
