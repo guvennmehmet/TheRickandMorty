@@ -8,21 +8,29 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var isShowingSheet: Bool = false
+    
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 16) {
-                    Image("rick_and_morty")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .padding()
+            VStack {
+                Button(action: {
+                    isShowingSheet.toggle()
+                }) {
                     Text("about")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(10)
                 }
-                .padding()
+                .sheet(isPresented: $isShowingSheet) {
+                    AboutView()
+                        .presentationDragIndicator(.visible)
+                        .presentationDetents([.medium, .large])
+                }
             }
-            .navigationTitle("welcome_title")
+            .navigationTitle("Rick and Morty")
         }
-        .navigationViewStyle(.stack)
     }
 }
 

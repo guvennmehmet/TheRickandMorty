@@ -24,6 +24,9 @@ The sixth season premiered on September 4, 2022, and consists of ten episodes. A
 "locations" = "Locations";
 "favorites" = "Favorites";
 "episode_characters" = "Episode Characters";
+"location_characters" = "Location Characters";
+
+"about" = "What is Rick and Morty?";
 
 //errors
 "no_data" = "No Data Found";

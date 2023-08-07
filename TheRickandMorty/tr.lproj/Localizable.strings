@@ -24,6 +24,9 @@ Dizi, 2 Aralık 2013 tarihinde eleştirel övgüyle galasını yaptı. 26 Temmuz
 "locations" = "Konumlar";
 "favorites" = "Favoriler";
 "episode_characters" = "Bölüm Karakterleri";
+"location_characters" = "Konum Karakterleri";
+
+"about" = "Rick and Morty Nedir?";
 
 "no_data" = "Veri Bulunamadı";
 "error_title" = "Hata";

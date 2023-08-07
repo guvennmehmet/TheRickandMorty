@@ -15,7 +15,11 @@ struct LocationDetailListCard: View {
     var body: some View {
         VStack {
             HStack {
-                Text("\(locationCharacterViewModel.characters.count) \(locationCharacterViewModel.characters.count > 1 ? "characters" : "character")")
+                Text(LocalizedStringKey("location_characters"))
+                    .font(.headline)
+                    .fontWeight(.medium)
+                    .opacity(0.7)
+                Text("(\(locationCharacterViewModel.characters.count))")
                     .font(.headline)
                     .fontWeight(.medium)
                     .opacity(0.7)
