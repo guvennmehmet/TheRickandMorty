@@ -31,7 +31,7 @@ struct LocationDetailListCard: View {
         }
         .padding(.horizontal)
         .onAppear {
-            locationCharacterViewModel.fetchCharacters(for: location.id)
+            locationCharacterViewModel.fetchCharacters(for: location)
         }
     }
 }
