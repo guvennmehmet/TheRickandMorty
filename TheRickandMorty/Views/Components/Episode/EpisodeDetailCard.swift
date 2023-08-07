@@ -37,7 +37,7 @@ struct EpisodeDetailCard_Previews: PreviewProvider {
             airDate: "August 3, 2023",
             episodeNumber: "S02E03",
             url: "",
-            created: "2023-08-03T12:00:00Z",
+            created: "2023-08-03",
             characterURLs: []
 
         )

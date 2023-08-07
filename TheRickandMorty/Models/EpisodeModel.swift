@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Episode: Codable, Identifiable {
+struct Episode: Codable, Identifiable, DateFormattable {
     let id: Int
     let name: String
     let airDate: String
@@ -24,17 +24,6 @@ struct Episode: Codable, Identifiable {
         case url
         case created
         case characterURLs = "characters"
-    }
-    var formattedCreatedDate: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-
-        if let date = formatter.date(from: created) {
-            formatter.dateFormat = "dd-MM-yyyy"
-            return formatter.string(from: date)
-        }
-
-        return created
     }
 }
 

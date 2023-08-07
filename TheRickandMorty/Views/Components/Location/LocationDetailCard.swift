@@ -12,20 +12,18 @@ struct LocationDetailCard: View {
     let colorTheme = ColorTheme()
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 8) {
-                Text(location.name)
-                    .firstTitleTextStyle()
-                Text(location.type)
-                    .secondTitleTextStyle()
-                Text(location.dimension)
-                    .italicTextStyle()
-                Text(location.created)
-                    .italicTextStyle()
+        VStack(alignment: .leading, spacing: 10) {
+            CustomListRowView(rowLabel: "Name", rowIcon: "number", rowContent: location.name, rowTintColor: .blue)
+            Divider()
+            CustomListRowView(rowLabel: "Type", rowIcon: "tag.fill", rowContent: location.type, rowTintColor: .red)
+            Divider()
+            CustomListRowView(rowLabel: "Dimension", rowIcon: "globe", rowContent: location.dimension, rowTintColor: .green)
+            Divider()
+            CustomListRowView(rowLabel: "Url", rowIcon: "link", rowContent: location.url, rowTintColor: .purple)
+            Divider()
+            CustomListRowView(rowLabel: "Created", rowIcon: "clock", rowContent: location.formattedCreatedDate, rowTintColor: .orange)
             }
-            Spacer()
-        }
-        .modifier(LocationCardStyle())
+        .padding(16)
     }
 }
 
@@ -39,7 +37,7 @@ struct LocationDetailCard_Previews: PreviewProvider {
                    dimension: "Dimension C-137",
                    residents: [],
                    url: "https://rickandmortyapi.com/api/location/1",
-                   created: "2023-08-03T12:00:00Z"
+                   created: "2023-08-03"
                )
         
         return LocationDetailCard(location: sampleLocation)
