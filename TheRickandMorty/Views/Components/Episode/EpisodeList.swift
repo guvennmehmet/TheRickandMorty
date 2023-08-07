@@ -11,13 +11,6 @@ struct EpisodeList: View {
 
     var body: some View {
         VStack {
-            HStack {
-                Text("\(episodeViewModel.episodes.count) \(episodeViewModel.episodes.count > 1 ? "episodes" : "episode")")
-                    .font(.headline)
-                    .fontWeight(.medium)
-                    .opacity(0.7)
-                Spacer()
-            }
             
             ScrollView {
                 VStack(spacing: 15) {
