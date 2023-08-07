@@ -17,61 +17,40 @@ struct CharacterDetailCard: View {
                 Group {
                     CustomListRowView(rowLabel: "Name", rowIcon: "person.fill", rowContent: character.name, rowTintColor: .blue)
                     Divider()
-                    CustomListRowView(rowLabel: "Status", rowIcon: "circle.fill", rowContent: character.status, rowTintColor: .blue)
+                    CustomListRowView(rowLabel: "Status", rowIcon: "circle.fill", rowContent: character.status, rowTintColor: .red)
                     Divider()
-                    CustomListRowView(rowLabel: "Species", rowIcon: "star.fill", rowContent: character.species, rowTintColor: .blue)
+                    CustomListRowView(rowLabel: "Species", rowIcon: "star.fill", rowContent: character.species, rowTintColor: .green)
                     Divider()
-                    CustomListRowView(rowLabel: "Type", rowIcon: "square.fill", rowContent: character.type, rowTintColor: .blue)
+                    CustomListRowView(rowLabel: "Type", rowIcon: "square.fill", rowContent: character.type, rowTintColor: .purple)
                     Divider()
-                    CustomListRowView(rowLabel: "Gender", rowIcon: "person.crop.circle.fill", rowContent: character.gender, rowTintColor: .blue)
+                    CustomListRowView(rowLabel: "Gender", rowIcon: "person.crop.circle.fill", rowContent: character.gender, rowTintColor: .orange)
                     Divider()
                 }
-                .padding(16)
                 
                 Group {
-                    CustomListRowView(rowLabel: "Origin", rowIcon: "location.fill", rowContent: character.origin.name, rowTintColor: .blue)
+                    CustomListRowView(rowLabel: "Origin", rowIcon: "location.fill", rowContent: character.origin.name, rowTintColor: .pink)
                     Divider()
-                    CustomListRowView(rowLabel: "Location", rowIcon: "mappin.circle.fill", rowContent: character.location.name, rowTintColor: .blue)
+                    CustomListRowView(rowLabel: "Location", rowIcon: "mappin.circle.fill", rowContent: character.location.name, rowTintColor: .gray)
                     Divider()
-                }
-                .padding(16)
-                
-                Group {
-                    CustomListRowView(rowLabel: "Image", rowIcon: "photo.fill", rowContent: character.image, rowTintColor: .blue)
-                    Divider()
-                    if let firstEpisode = character.episode.first {
-                        CustomListRowView(rowLabel: "First Episode", rowIcon: "play.rectangle.fill", rowContent: firstEpisode, rowTintColor: .blue)
-                        Divider()
-                    }
-                    CustomListRowView(rowLabel: "URL", rowIcon: "link", rowContent: character.url, rowTintColor: .blue)
-                    Divider()
-                    CustomListRowView(rowLabel: "Created", rowIcon: "calendar", rowContent: character.formattedCreatedDate, rowTintColor: .blue)
+                    CustomListRowView(rowLabel: "Created", rowIcon: "calendar", rowContent: character.formattedCreatedDate, rowTintColor: .brown)
                     Divider()
                 }
-                .padding(16)
             }
+            .padding(16)
         }
     }
 }
 
 struct CharacterDetailCard_Previews: PreviewProvider {
     static var previews: some View {
-        let exampleCharacter = Character(
-            id: 1,
-            name: "Rick Sanchez",
-            status: "Alive",
-            species: "Human",
-            type: "Scientist",
-            gender: "Male",
-            origin: CharacterLocationModel(name: "Earth (C-137)", url: ""),
-            location: CharacterLocationModel(name: "Earth (Replacement Dimension)", url: ""),
-            image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-            episode: ["https://rickandmortyapi.com/api/episode/1", "https://rickandmortyapi.com/api/episode/2"],
-            url: "https://rickandmortyapi.com/api/character/1",
-            created: "2017-11-04T18:48:46.250Z"
-        )
-        
-        return CharacterDetailCard(character: exampleCharacter)
-            .previewLayout(.sizeThatFits)
+        let viewModel = CharacterViewModel()
+                viewModel.fetchCharacters()
+        if let character = viewModel.characters.first {
+                    return AnyView(CharacterDetailCard(character: character)
+                        .previewLayout(.sizeThatFits))
+                } else {
+                    return AnyView(Text("Loading...")
+                        .previewLayout(.sizeThatFits))
+                }
     }
 }
