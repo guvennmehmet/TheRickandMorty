@@ -12,14 +12,6 @@ struct LocationList: View {
 
     var body: some View {
         VStack {
-            HStack {
-                Text("\(locationViewModel.locations.count) \(locationViewModel.locations.count > 1 ? "locations" : "location")")
-                    .font(.headline)
-                    .fontWeight(.medium)
-                    .opacity(0.7)
-                Spacer()
-            }
-            
             ScrollView {
                 VStack(spacing: 15) {
                     ForEach(locationViewModel.locations) { location in

@@ -14,7 +14,7 @@ struct LocationCard: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 8) {
-                Text("Location \(location.name)")
+                Text(location.name)
                     .firstTitleTextStyle()
                 Text(location.type)
                     .secondTitleTextStyle()
