@@ -15,7 +15,7 @@ struct AboutView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding()
-                Text("about")
+                Text("rick_and_morty_about")
             }
             .padding()
         }
