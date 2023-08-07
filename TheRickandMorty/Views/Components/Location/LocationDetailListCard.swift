@@ -1,21 +1,21 @@
 //
-//  EpisodeDetailListCard.swift
+//  LocationDetailListCard.swift
 //  TheRickandMorty
 //
-//  Created by Mehmet Güven on 3.08.2023.
+//  Created by Mehmet Güven on 7.08.2023.
 //
 
 import SwiftUI
 
-struct EpisodeDetailListCard: View {
-    var episode: Episode
-    @StateObject private var episodeCharacterViewModel = EpisodeCharacterViewModel()
+struct LocationDetailListCard: View {
+    var location: Location
+    @StateObject private var locationCharacterViewModel = LocationCharacterViewModel()
     @EnvironmentObject var characterViewModel: CharacterViewModel
 
     var body: some View {
         VStack {
             HStack {
-                Text("\(episodeCharacterViewModel.characters.count) \(episodeCharacterViewModel.characters.count > 1 ? "characters" : "character")")
+                Text("\(locationCharacterViewModel.characters.count) \(locationCharacterViewModel.characters.count > 1 ? "characters" : "character")")
                     .font(.headline)
                     .fontWeight(.medium)
                     .opacity(0.7)
@@ -23,7 +23,7 @@ struct EpisodeDetailListCard: View {
             }
 
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15), GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
-                ForEach(episodeCharacterViewModel.characters) { character in
+                ForEach(locationCharacterViewModel.characters) { character in
                     CharacterCard(characterViewModel: characterViewModel, character: character)
                 }
             }
@@ -31,30 +31,24 @@ struct EpisodeDetailListCard: View {
         }
         .padding(.horizontal)
         .onAppear {
-            episodeCharacterViewModel.fetchCharacters(for: episode.id)
+            locationCharacterViewModel.fetchCharacters(for: location.id)
         }
     }
 }
 
-struct EpisodeDetailListCard_Previews: PreviewProvider {
+struct LocationDetailListCard_Previews: PreviewProvider {
     static var previews: some View {
-        let episodeViewModel = EpisodeViewModel()
-        episodeViewModel.fetchEpisodes()
+        let locationViewModel = LocationViewModel()
+        locationViewModel.fetchLocations()
 
-        if let episode = episodeViewModel.episodes.first {
+        if let location = locationViewModel.locations.first {
             return ScrollView {
-                EpisodeDetailListCard(episode: episode)
+                LocationDetailListCard(location: location)
             }
             .environmentObject(CharacterViewModel())
             .eraseToAnyView()
         } else {
             return AnyView(Text("no_data"))
         }
-    }
-}
-
-extension View {
-    func eraseToAnyView() -> AnyView {
-        AnyView(self)
     }
 }

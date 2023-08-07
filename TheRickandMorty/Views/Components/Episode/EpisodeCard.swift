@@ -15,11 +15,11 @@ struct EpisodeCard: View {
         HStack {
             VStack(alignment: .leading, spacing: 8) {
                 Text("Episode \(episode.episodeNumber)")
-                    .episodeNumberStyle()
+                    .firstTitleTextStyle()
                 Text(episode.name)
-                    .episodeNameStyle()
+                    .secondTitleTextStyle()
                 Text(episode.airDate)
-                    .airDateStyle()
+                    .italicTextStyle()
             }
             Spacer()
         }

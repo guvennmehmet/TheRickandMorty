@@ -19,8 +19,12 @@ struct LocationDetailView: View {
     var body: some View {
         if let location = locationViewModel.getLocationById(locationID) {
             ScrollView {
-                LocationCard(location: location)
+                LocationDetailCard(location: location)
+                
+                LocationDetailListCard(location: location)
+                    .environmentObject(CharacterViewModel())
             }
+            .padding(.horizontal)
             .navigationTitle(location.name)
         } else {
             Text("no_data")

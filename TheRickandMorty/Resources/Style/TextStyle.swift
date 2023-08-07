@@ -1,22 +1,22 @@
 //
-//  LocationTextStyle.swift
+//  TextStyle.swift
 //  TheRickandMorty
 //
-//  Created by Mehmet Güven on 3.08.2023.
+//  Created by Mehmet Güven on 7.08.2023.
 //
 
 import Foundation
 import SwiftUI
 
 extension Text {
-    func locationNameStyle() -> some View {
+    func firstTitleTextStyle() -> some View {
         self
             .font(.title)
             .fontWeight(.bold)
             .foregroundColor(Color.accentColor)
     }
     
-    func locationTypeStyle() -> some View {
+    func secondTitleTextStyle() -> some View {
         self
             .font(.title2)
             .fontWeight(.semibold)
@@ -25,7 +25,7 @@ extension Text {
             .truncationMode(.tail)
     }
     
-    func locationDimensionStyle() -> some View {
+    func italicTextStyle() -> some View {
         self
             .italic()
     }

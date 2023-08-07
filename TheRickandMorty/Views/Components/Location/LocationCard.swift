@@ -15,11 +15,11 @@ struct LocationCard: View {
         HStack {
             VStack(alignment: .leading, spacing: 8) {
                 Text("Location \(location.name)")
-                    .locationNameStyle()
+                    .firstTitleTextStyle()
                 Text(location.type)
-                    .locationTypeStyle()
+                    .secondTitleTextStyle()
                 Text(location.dimension)
-                    .locationDimensionStyle()
+                    .italicTextStyle()
             }
             Spacer()
         }
