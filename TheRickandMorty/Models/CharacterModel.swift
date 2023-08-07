@@ -15,7 +15,7 @@ https://rickandmortyapi.com/api
  
  */
 
-struct Character: Codable, Identifiable {
+struct Character: Codable, Identifiable, DateFormattable {
     let id: Int
     let name: String
     let status: String

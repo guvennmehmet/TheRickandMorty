@@ -11,102 +11,67 @@ struct CharacterDetailCard: View {
     var character: Character
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Text(character.name)
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.red)
-            
-            HStack {
-                Text("Status:")
-                    .labelStyle()
-                Text(character.status)
-                    .font(.headline)
-            }
-            
-            HStack {
-                Text("Species:")
-                    .labelStyle()
-                Text(character.species)
-                    .font(.headline)
-            }
-            
-            HStack {
-                Text("Type:")
-                    .labelStyle()
-                Text(character.type)
-                    .font(.headline)
-            }
-            
-            HStack {
-                Text("Gender:")
-                    .labelStyle()
-                Text(character.gender)
-                    .font(.headline)
-            }
-            
-            VStack(alignment: .leading, spacing: 4) {
-                Text("Origin:")
-                    .labelStyle()
-                Text(character.origin.name)
-            }
-            
-            VStack(alignment: .leading, spacing: 4) {
-                Text("Location:")
-                    .labelStyle()
-                Text(character.location.name)
-            }
-            
-            HStack {
-                Text("Episodes:")
-                    .labelStyle()
-                VStack(alignment: .leading, spacing: 4) {
-                    ForEach(character.episode, id: \.self) { episodeURL in
-                        Text(episodeURL)
-                    }
+        ScrollView {
+            VStack(alignment: .leading, spacing: 10) {
+                
+                Group {
+                    CustomListRowView(rowLabel: "Name", rowIcon: "person.fill", rowContent: character.name, rowTintColor: .blue)
+                    Divider()
+                    CustomListRowView(rowLabel: "Status", rowIcon: "circle.fill", rowContent: character.status, rowTintColor: .blue)
+                    Divider()
+                    CustomListRowView(rowLabel: "Species", rowIcon: "star.fill", rowContent: character.species, rowTintColor: .blue)
+                    Divider()
+                    CustomListRowView(rowLabel: "Type", rowIcon: "square.fill", rowContent: character.type, rowTintColor: .blue)
+                    Divider()
+                    CustomListRowView(rowLabel: "Gender", rowIcon: "person.crop.circle.fill", rowContent: character.gender, rowTintColor: .blue)
+                    Divider()
                 }
-            }
-            
-            HStack {
-                Text("Created:")
-                    .labelStyle()
-                Text(character.created)
-                    .font(.caption)
+                .padding(16)
+                
+                Group {
+                    CustomListRowView(rowLabel: "Origin", rowIcon: "location.fill", rowContent: character.origin.name, rowTintColor: .blue)
+                    Divider()
+                    CustomListRowView(rowLabel: "Location", rowIcon: "mappin.circle.fill", rowContent: character.location.name, rowTintColor: .blue)
+                    Divider()
+                }
+                .padding(16)
+                
+                Group {
+                    CustomListRowView(rowLabel: "Image", rowIcon: "photo.fill", rowContent: character.image, rowTintColor: .blue)
+                    Divider()
+                    if let firstEpisode = character.episode.first {
+                        CustomListRowView(rowLabel: "First Episode", rowIcon: "play.rectangle.fill", rowContent: firstEpisode, rowTintColor: .blue)
+                        Divider()
+                    }
+                    CustomListRowView(rowLabel: "URL", rowIcon: "link", rowContent: character.url, rowTintColor: .blue)
+                    Divider()
+                    CustomListRowView(rowLabel: "Created", rowIcon: "calendar", rowContent: character.formattedCreatedDate, rowTintColor: .blue)
+                    Divider()
+                }
+                .padding(16)
             }
         }
-        .padding()
-        .background(Color.white)
-        .cornerRadius(10)
-        .shadow(radius: 10)
-        .padding()
-    }
-}
-
-struct LabelStyle: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .font(.headline)
-            .foregroundColor(.red)
-    }
-}
-
-extension View {
-    func labelStyle() -> some View {
-        self.modifier(LabelStyle())
     }
 }
 
 struct CharacterDetailCard_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = CharacterViewModel()
-        viewModel.fetchCharacters()
+        let exampleCharacter = Character(
+            id: 1,
+            name: "Rick Sanchez",
+            status: "Alive",
+            species: "Human",
+            type: "Scientist",
+            gender: "Male",
+            origin: CharacterLocationModel(name: "Earth (C-137)", url: ""),
+            location: CharacterLocationModel(name: "Earth (Replacement Dimension)", url: ""),
+            image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+            episode: ["https://rickandmortyapi.com/api/episode/1", "https://rickandmortyapi.com/api/episode/2"],
+            url: "https://rickandmortyapi.com/api/character/1",
+            created: "2017-11-04T18:48:46.250Z"
+        )
         
-        if let character = viewModel.characters.first {
-            return AnyView(CharacterDetailCard(character: character)
-                .previewLayout(.sizeThatFits))
-        } else {
-            return AnyView(Text("Loading...") 
-                .previewLayout(.sizeThatFits))
-        }
+        return CharacterDetailCard(character: exampleCharacter)
+            .previewLayout(.sizeThatFits)
     }
 }
