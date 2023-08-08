@@ -11,13 +11,13 @@ struct LocationHorizontalListView: View {
     @ObservedObject var locationViewModel: LocationViewModel
 
     var body: some View {
-        ScrollView(.horizontal) {
-            VStack(alignment: .leading, spacing: 10) {
-                Text(NSLocalizedString("location_title", comment: ""))
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding(.leading)
-                
+        VStack(alignment: .leading) {
+            Text(NSLocalizedString("location_title", comment: ""))
+                .font(.title2)
+                .fontWeight(.bold)
+                .padding(.leading)
+            
+            ScrollView(.horizontal) {
                 LazyHStack(spacing: 15) {
                     ForEach(locationViewModel.locations) { location in
                         NavigationLink(destination: LocationDetailView(locationViewModel: locationViewModel, locationID: location.id)) {
@@ -27,10 +27,10 @@ struct LocationHorizontalListView: View {
                 }
                 .padding(.horizontal)
             }
-            .frame(height: 200)
-            .onAppear {
-                locationViewModel.fetchLocations()
-            }
+            .frame(height: 150)
+        }
+        .onAppear {
+            locationViewModel.fetchLocations()
         }
     }
 }

@@ -11,13 +11,13 @@ struct CharacterHorizontalList: View {
     @ObservedObject var characterViewModel: CharacterViewModel
     
     var body: some View {
-        ScrollView(.horizontal) {
-            VStack(alignment: .leading, spacing: 10) {
-                Text(NSLocalizedString("character_title", comment: ""))
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .padding(.leading)
-                
+        VStack(alignment: .leading, spacing: 10) {
+            Text(NSLocalizedString("character_title", comment: ""))
+                .font(.title2)
+                .fontWeight(.bold)
+                .padding(.leading)
+            
+            ScrollView(.horizontal) {
                 LazyHStack(spacing: 15) {
                     ForEach(characterViewModel.characters) { character in
                         NavigationLink(destination: CharacterDetailView(characterViewModel: characterViewModel, characterID: character.id)) {
