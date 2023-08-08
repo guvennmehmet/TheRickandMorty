@@ -16,11 +16,6 @@ struct CharacterCard: View {
         self.character = character
     }
     
-    var firstWordOfCharacterName: String {
-        let words = character.name.components(separatedBy: " ")
-        return words.first ?? character.name
-            }
-    
     var body: some View {
         VStack(spacing: 10) {
             AsyncImage(url: URL(string: character.image)) { image in
@@ -39,11 +34,11 @@ struct CharacterCard: View {
                     .cornerRadius(10)
             }
             
-            Text("- \(firstWordOfCharacterName) -")
+            Text(character.name)
                 .font(.headline)
                 .foregroundColor(.black)
                 .lineLimit(1)
-                .minimumScaleFactor(0.5)
+                .truncationMode(.tail)
         }
         .padding()
         .background(Color.white)
