@@ -49,6 +49,7 @@
 		70FD1FF52A6AC412000E02A8 /* TheRickandMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD1FF42A6AC412000E02A8 /* TheRickandMortyApp.swift */; };
 		70FD1FF92A6AC415000E02A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70FD1FF82A6AC415000E02A8 /* Assets.xcassets */; };
 		70FD1FFC2A6AC415000E02A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70FD1FFB2A6AC415000E02A8 /* Preview Assets.xcassets */; };
+		70FE7E742A82178A00426094 /* CharacterHorizontalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE7E732A82178A00426094 /* CharacterHorizontalList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		70FD1FF42A6AC412000E02A8 /* TheRickandMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheRickandMortyApp.swift; sourceTree = "<group>"; };
 		70FD1FF82A6AC415000E02A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70FD1FFB2A6AC415000E02A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		70FE7E732A82178A00426094 /* CharacterHorizontalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterHorizontalList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				709812A72A73AEED00ACBDDF /* CharacterCard.swift */,
 				709812A92A73B9AC00ACBDDF /* CharacterList.swift */,
 				702908DE2A777DD7008AF4C4 /* CharacterDetailCard.swift */,
+				70FE7E732A82178A00426094 /* CharacterHorizontalList.swift */,
 			);
 			path = Character;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				708BE82B2A7B9F7A006AEF58 /* EpisodeCardStyle.swift in Sources */,
 				7010A4662A7A8289006F3B91 /* EpisodeCard.swift in Sources */,
 				709812A42A738C3500ACBDDF /* FavoritesView.swift in Sources */,
+				70FE7E742A82178A00426094 /* CharacterHorizontalList.swift in Sources */,
 				704BFD7A2A79181E00D6E39C /* LocationViewModel.swift in Sources */,
 				70F12B0A2A80C31E00E77E76 /* LocationDetailListCard.swift in Sources */,
 				708BE8362A7BD2C3006AEF58 /* LocationDetailCard.swift in Sources */,

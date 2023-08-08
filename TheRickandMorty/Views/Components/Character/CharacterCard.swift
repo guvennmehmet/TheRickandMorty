@@ -39,6 +39,7 @@ struct CharacterCard: View {
                 .foregroundColor(.black)
                 .lineLimit(1)
                 .truncationMode(.tail)
+                .frame(maxWidth: 120)
         }
         .padding()
         .background(Color.white)
