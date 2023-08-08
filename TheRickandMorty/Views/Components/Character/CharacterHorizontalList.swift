@@ -17,21 +17,29 @@ struct CharacterHorizontalList: View {
                 .fontWeight(.bold)
                 .padding(.leading)
             
-            ScrollView(.horizontal) {
-                LazyHStack(spacing: 15) {
-                    ForEach(characterViewModel.characters) { character in
-                        NavigationLink(destination: CharacterDetailView(characterViewModel: characterViewModel, characterID: character.id)) {
-                            CharacterCard(characterViewModel: characterViewModel, character: character)
+            ScrollViewReader { scrollView in
+                ScrollView(.horizontal) {
+                    LazyHStack(spacing: 15) {
+                        ForEach(characterViewModel.characters) { character in
+                            NavigationLink(destination: CharacterDetailView(characterViewModel: characterViewModel, characterID: character.id)) {
+                                CharacterCard(characterViewModel: characterViewModel, character: character)
+                            }
+                            .id(character.id)
+                            .onAppear {
+                                if character.id == characterViewModel.characters.last?.id {
+                                    characterViewModel.fetchMoreCharacters()
+                                }
+                            }
                         }
                     }
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
+                .onAppear {
+                    characterViewModel.fetchCharacters()
+                }
             }
         }
         .frame(height: 320)
-        .onAppear {
-            characterViewModel.fetchCharacters()
-        }
     }
 }
 

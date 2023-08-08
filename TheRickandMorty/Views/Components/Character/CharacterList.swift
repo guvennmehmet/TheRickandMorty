@@ -24,6 +24,11 @@ struct CharacterList: View {
                     NavigationLink(destination: CharacterDetailView(characterViewModel: characterViewModel, characterID: character.id)) {
                         CharacterCard(characterViewModel: characterViewModel, character: character)
                     }
+                    .onAppear {
+                        if character.id == characterViewModel.characters.last?.id {
+                            characterViewModel.fetchMoreCharacters()
+                        }
+                    }
                 }
             }
             .padding(.top)
