@@ -28,8 +28,11 @@ struct HomeView: View {
                         .presentationDragIndicator(.visible)
                         .presentationDetents([.medium, .large])
                 }
-                CharacterHorizontalList(characterViewModel: CharacterViewModel())
-                Spacer()
+                .padding(10)
+                VStack(spacing: 10) {                     CharacterHorizontalList(characterViewModel: CharacterViewModel())
+                        .padding(.bottom, 10)
+                    LocationHorizontalListView(locationViewModel: LocationViewModel())
+                }
             }
             .navigationTitle("Rick and Morty")
         }
