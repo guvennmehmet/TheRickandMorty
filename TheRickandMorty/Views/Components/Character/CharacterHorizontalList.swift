@@ -12,17 +12,23 @@ struct CharacterHorizontalList: View {
     
     var body: some View {
         ScrollView(.horizontal) {
-            LazyHStack(spacing: 15) {
-                ForEach(characterViewModel.characters) { character in
-                    NavigationLink(destination: CharacterDetailView(characterViewModel: characterViewModel, characterID: character.id)) {
-                        CharacterCard(characterViewModel: characterViewModel, character: character)
-                            
+            VStack(alignment: .leading, spacing: 10) {
+                Text(NSLocalizedString("character_title", comment: ""))
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .padding(.leading)
+                
+                LazyHStack(spacing: 15) {
+                    ForEach(characterViewModel.characters) { character in
+                        NavigationLink(destination: CharacterDetailView(characterViewModel: characterViewModel, characterID: character.id)) {
+                            CharacterCard(characterViewModel: characterViewModel, character: character)
+                        }
                     }
                 }
+                .padding(.horizontal)
             }
-            .padding(.horizontal)
         }
-        .frame(width: .infinity, height: 300)
+        .frame(height: 320)
         .onAppear {
             characterViewModel.fetchCharacters()
         }

@@ -28,6 +28,8 @@ struct HomeView: View {
                         .presentationDragIndicator(.visible)
                         .presentationDetents([.medium, .large])
                 }
+                CharacterHorizontalList(characterViewModel: CharacterViewModel())
+                Spacer()
             }
             .navigationTitle("Rick and Morty")
         }
