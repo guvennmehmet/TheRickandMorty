@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LocationHorizontalListView: View {
+struct LocationHorizontalList: View {
     @ObservedObject var locationViewModel: LocationViewModel
 
     var body: some View {
@@ -35,11 +35,11 @@ struct LocationHorizontalListView: View {
     }
 }
 
-struct LocationHorizontalListView_Previews_Previews: PreviewProvider {
+struct LocationHorizontalList_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = LocationViewModel()
         viewModel.fetchLocations()
             
-        return LocationHorizontalListView(locationViewModel: viewModel)
+        return LocationHorizontalList(locationViewModel: viewModel)
     }
 }

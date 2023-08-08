@@ -12,26 +12,31 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                Button(action: {
-                    isShowingSheet.toggle()
-                }) {
-                    Text("about")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                }
-                .sheet(isPresented: $isShowingSheet) {
-                    AboutView()
-                        .presentationDragIndicator(.visible)
-                        .presentationDetents([.medium, .large])
-                }
-                .padding(10)
-                VStack(spacing: 10) {                     CharacterHorizontalList(characterViewModel: CharacterViewModel())
-                        .padding(.bottom, 10)
-                    LocationHorizontalListView(locationViewModel: LocationViewModel())
+            ScrollView {
+                VStack {
+                    Button(action: {
+                        isShowingSheet.toggle()
+                    }) {
+                        Text("about")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                    }
+                    .sheet(isPresented: $isShowingSheet) {
+                        AboutView()
+                            .presentationDragIndicator(.visible)
+                            .presentationDetents([.medium, .large])
+                    }
+                    .padding(10)
+                    VStack(spacing: 10) {
+                        CharacterHorizontalList(characterViewModel: CharacterViewModel())
+                            .padding(.bottom, 10)
+                        LocationHorizontalList(locationViewModel: LocationViewModel())
+                            .padding(.bottom, 10)
+                        EpisodeHorizontalList(episodeViewModel: EpisodeViewModel())
+                    }
                 }
             }
             .navigationTitle("Rick and Morty")
