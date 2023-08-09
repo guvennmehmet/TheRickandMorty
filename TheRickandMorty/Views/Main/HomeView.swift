@@ -26,8 +26,8 @@ struct HomeView: View {
                     }
                     .sheet(isPresented: $isShowingSheet) {
                         AboutView()
-                            .presentationDragIndicator(.visible)
-                            .presentationDetents([.medium, .large])
+                            //.presentationDragIndicator(.visible)
+                            //.presentationDetents([.medium, .large])
                     }
                     .padding(10)
                     VStack(spacing: 10) {

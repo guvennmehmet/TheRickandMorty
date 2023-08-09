@@ -16,26 +16,23 @@ struct CustomListRowView: View {
     var rowTintColor: Color
 
     var body: some View {
-        LabeledContent {
-            // Content
+        HStack {
+            ZStack {
+                RoundedRectangle(cornerRadius: 8)
+                    .frame(width: 30, height: 30)
+                    .foregroundColor(rowTintColor)
+                Image(systemName: rowIcon)
+                    .foregroundColor(.white)
+                    .font(.subheadline)
+            }
+
+            Text(rowLabel)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
             if let content = rowContent {
                 Text(content)
                     .foregroundColor(.primary)
                     .fontWeight(.heavy)
-            }
-        } label: {
-            // Label
-            HStack {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 8)
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(rowTintColor)
-                    Image(systemName: rowIcon)
-                        .foregroundColor(.white)
-                        .fontWeight(.semibold)
-                }
-
-                Text(rowLabel)
             }
         }
     }
