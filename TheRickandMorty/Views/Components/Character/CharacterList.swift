@@ -11,6 +11,7 @@ struct CharacterList: View {
 
     var body: some View {
         VStack {
+            
             HStack {
                 Text("\(characterViewModel.characters.count) \(characterViewModel.characters.count > 1 ? "characters" : "character")")
                     .font(.headline)
@@ -23,11 +24,6 @@ struct CharacterList: View {
                 ForEach(characterViewModel.characters) { character in
                     NavigationLink(destination: CharacterDetailView(characterViewModel: characterViewModel, characterID: character.id)) {
                         CharacterCard(characterViewModel: characterViewModel, character: character)
-                    }
-                    .onAppear {
-                        if character.id == characterViewModel.characters.last?.id {
-                            characterViewModel.fetchMoreCharacters()
-                        }
                     }
                 }
             }

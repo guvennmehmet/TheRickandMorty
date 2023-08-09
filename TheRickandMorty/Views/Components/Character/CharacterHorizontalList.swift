@@ -11,35 +11,27 @@ struct CharacterHorizontalList: View {
     @ObservedObject var characterViewModel: CharacterViewModel
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading) {
             Text(NSLocalizedString("character_title", comment: ""))
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.leading)
             
-            ScrollViewReader { scrollView in
-                ScrollView(.horizontal) {
-                    LazyHStack(spacing: 15) {
-                        ForEach(characterViewModel.characters) { character in
-                            NavigationLink(destination: CharacterDetailView(characterViewModel: characterViewModel, characterID: character.id)) {
-                                CharacterCard(characterViewModel: characterViewModel, character: character)
-                            }
-                            .id(character.id)
-                            .onAppear {
-                                if character.id == characterViewModel.characters.last?.id {
-                                    characterViewModel.fetchMoreCharacters()
-                                }
-                            }
+            ScrollView(.horizontal) {
+                LazyHStack(spacing: 15) {
+                    ForEach(characterViewModel.characters) { character in
+                        NavigationLink(destination: CharacterDetailView(characterViewModel: characterViewModel, characterID: character.id)) {
+                            CharacterCard(characterViewModel: characterViewModel, character: character)
                         }
                     }
-                    .padding(.horizontal)
                 }
-                .onAppear {
-                    characterViewModel.fetchCharacters()
-                }
+                .padding(.horizontal)
             }
+            .frame(height: 300)
         }
-        .frame(height: 320)
+        .onAppear {
+            characterViewModel.fetchCharacters()
+        }
     }
 }
 
@@ -47,7 +39,7 @@ struct CharacterHorizontalList_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = CharacterViewModel()
         viewModel.fetchCharacters()
-        
+            
         return CharacterHorizontalList(characterViewModel: viewModel)
     }
 }
