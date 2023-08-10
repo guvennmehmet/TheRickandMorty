@@ -11,7 +11,7 @@ struct EpisodeHorizontalList: View {
     @ObservedObject var episodeViewModel: EpisodeViewModel
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 10) {
             Text(NSLocalizedString("episode_title", comment: ""))
                 .font(.title2)
                 .fontWeight(.bold)
@@ -23,15 +23,24 @@ struct EpisodeHorizontalList: View {
                         NavigationLink(destination: EpisodeDetailView(episodeViewModel: episodeViewModel, episodeID: episode.id)) {
                             EpisodeCard(episode: episode)
                         }
+                        .id(episode.id)
+                    }
+                    if let lastEpisode = episodeViewModel.episodes.last,
+                       let lastFetchedEpisode = episodeViewModel.episodes.last,
+                       lastEpisode.id == lastFetchedEpisode.id {
+                        ProgressView()
+                            .onAppear {
+                                episodeViewModel.fetchMoreEpisodes()
+                            }
                     }
                 }
                 .padding(.horizontal)
             }
-            .frame(height: 150)
+            .onAppear {
+                episodeViewModel.fetchEpisodes()
+            }
         }
-        .onAppear {
-            episodeViewModel.fetchEpisodes()
-        }
+        .frame(height: 200)
     }
 }
 

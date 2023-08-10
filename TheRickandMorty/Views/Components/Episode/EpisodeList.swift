@@ -11,24 +11,34 @@ struct EpisodeList: View {
 
     var body: some View {
         VStack {
+            HStack {
+                Text("\(episodeViewModel.episodes.count) \(episodeViewModel.episodes.count > 1 ? "episodes" : "episode")")
+                    .font(.headline)
+                    .fontWeight(.medium)
+                    .opacity(0.7)
+                Spacer()
+            }
             
-            ScrollView {
-                VStack(spacing: 15) {
+                LazyVStack(spacing: 15) {
                     ForEach(episodeViewModel.episodes) { episode in
                         NavigationLink(destination: EpisodeDetailView(episodeViewModel: episodeViewModel, episodeID: episode.id)) {
                             EpisodeCard(episode: episode)
                         }
+                        .onAppear {
+                            if episode.id == episodeViewModel.episodes.last?.id {
+                                episodeViewModel.fetchMoreEpisodes()
+                            }
+                        }
                     }
                 }
+                .padding(.top)
             }
-            .padding(.top)
-        }
-        .padding(.horizontal)
-        .onAppear {
-            episodeViewModel.fetchEpisodes()
+            .padding(.horizontal)
+            .onAppear {
+                episodeViewModel.fetchEpisodes()
+            }
         }
     }
-}
 
 struct EpisodeList_Previews: PreviewProvider {
     static var previews: some View {

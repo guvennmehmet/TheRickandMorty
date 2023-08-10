@@ -13,10 +13,14 @@ class EpisodeViewModel: ObservableObject {
 
     private var cancellable: AnyCancellable?
     private var currentPage = 1
+    private var isLoading = false
 
     func fetchEpisodes() {
+        if isLoading { return }
+
         let url = URL(string: "\(API.episodeURL)/?page=\(currentPage)")!
 
+        self.isLoading = true
         self.cancellable = URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }
             .decode(type: EpisodeResponse.self, decoder: JSONDecoder())
@@ -24,17 +28,26 @@ class EpisodeViewModel: ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
-                    break
+                    self.isLoading = false
                 case .failure(let error):
                     print("Error decoding data: \(error)")
+                    self.isLoading = false
                 }
             }, receiveValue: { response in
                 if !response.results.isEmpty {
-                    self.episodes.append(contentsOf: response.results)
-                    self.currentPage += 1
-                    self.fetchEpisodes()
+                    if self.currentPage == 1 {
+                        self.episodes = response.results
+                    } else {
+                        self.episodes.append(contentsOf: response.results)
+                    }
                 }
             })
+    }
+    
+    func fetchMoreEpisodes() {
+        if isLoading { return }
+        currentPage += 1
+            self.fetchEpisodes()
     }
     
     func getEpisodeById(_ id: Int) -> Episode? {
