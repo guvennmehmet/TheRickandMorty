@@ -12,6 +12,9 @@ struct SearchToolbarItem: View {
         NavigationLink(destination: SearchView()) {
             Image(systemName: "magnifyingglass")
         }
+        NavigationLink(destination: SettingsView()) {
+            Image(systemName: "gear")
+        }
     }
 }
 
