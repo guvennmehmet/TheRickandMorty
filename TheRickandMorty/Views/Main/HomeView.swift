@@ -18,16 +18,10 @@ struct HomeView: View {
                         isShowingSheet.toggle()
                     }) {
                         Text("about")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color.blue)
-                            .cornerRadius(10)
                     }
+                    .buttonStyle(GrowingButtonStyle())
                     .sheet(isPresented: $isShowingSheet) {
                         AboutView()
-                            //.presentationDragIndicator(.visible)
-                            //.presentationDetents([.medium, .large])
                     }
                     .padding(10)
                     VStack(spacing: 10) {
