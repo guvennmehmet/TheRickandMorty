@@ -15,7 +15,21 @@ struct CharactersView: View {
             ScrollView {
                 CharacterList(characterViewModel: characterViewModel) 
             }
-            .navigationTitle("character_title")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        Text("character_title")
+                            .font(.title)
+                        
+                        Spacer()
+                        
+                        NavigationLink(destination: SearchView()) {
+                            Image(systemName: "magnifyingglass")
+                        }
+                    }
+                }
+            }
         }
         .navigationViewStyle(.stack)
         .onAppear {

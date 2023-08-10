@@ -15,7 +15,21 @@ struct EpisodesView: View {
             ScrollView {
                 EpisodeList(episodeViewModel: episodeViewModel)
             }
-            .navigationTitle("episode_title")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        Text("episode_title")
+                            .font(.title)
+                        
+                        Spacer()
+                        
+                        NavigationLink(destination: SearchView()) {
+                            Image(systemName: "magnifyingglass")
+                        }
+                    }
+                }
+            }
         }
         .navigationViewStyle(.stack)
         .onAppear {

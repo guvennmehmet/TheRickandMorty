@@ -15,7 +15,21 @@ struct LocationsView: View {
             ScrollView {
                 LocationList(locationViewModel: locationViewModel)
             }
-            .navigationTitle("location_title")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        Text("location_title")
+                            .font(.title)
+                        
+                        Spacer()
+                        
+                        NavigationLink(destination: SearchView()) {
+                            Image(systemName: "magnifyingglass")
+                        }
+                    }
+                }
+            }
         }
         .navigationViewStyle(.stack)
         .onAppear {
