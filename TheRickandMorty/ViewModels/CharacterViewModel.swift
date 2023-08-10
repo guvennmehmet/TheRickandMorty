@@ -47,7 +47,9 @@ class CharacterViewModel: ObservableObject {
     func fetchMoreCharacters() {
         if isLoading { return }
         currentPage += 1
-        fetchCharacters()
+        DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
+            self.fetchCharacters()
+        }
     }
 
     func getCharacterById(_ id: Int) -> Character? {
