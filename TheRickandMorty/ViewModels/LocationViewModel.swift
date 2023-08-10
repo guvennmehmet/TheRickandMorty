@@ -18,34 +18,10 @@ class LocationViewModel: ObservableObject {
     func fetchLocations() {
         if isLoading { return }
 
-        let url = URL(string: "\(API.locationURL)/?page=1")!
-
-        isLoading = true
-        cancellable = URLSession.shared.dataTaskPublisher(for: url)
-            .map { $0.data }
-            .decode(type: LocationResponse.self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    self.isLoading = false
-                case .failure(let error):
-                    print("Error decoding data: \(error)")
-                    self.isLoading = false
-                }
-            }, receiveValue: { response in
-                self.locations = response.results
-            })
-    }
-
-    func fetchMoreLocations() {
-        if isLoading { return }
-        currentPage += 1
-        
         let url = URL(string: "\(API.locationURL)/?page=\(currentPage)")!
-        
-        isLoading = true
-        cancellable = URLSession.shared.dataTaskPublisher(for: url)
+
+        self.isLoading = true
+        self.cancellable = URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }
             .decode(type: LocationResponse.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
@@ -59,9 +35,21 @@ class LocationViewModel: ObservableObject {
                 }
             }, receiveValue: { response in
                 if !response.results.isEmpty {
-                    self.locations.append(contentsOf: response.results)
+                    if self.currentPage == 1 {
+                        self.locations = response.results
+                    } else {
+                        self.locations.append(contentsOf: response.results)
+                    }
                 }
             })
+    }
+    
+    func fetchMoreLocations() {
+        if isLoading { return }
+        currentPage += 1
+        //DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
+            self.fetchLocations()
+        //}
     }
 
     func getLocationById(_ id: Int) -> Location? {

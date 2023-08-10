@@ -17,7 +17,6 @@ struct CharacterHorizontalList: View {
                 .fontWeight(.bold)
                 .padding(.leading)
             
-            ScrollViewReader { scrollView in
                 ScrollView(.horizontal) {
                     LazyHStack(spacing: 15) {
                         ForEach(characterViewModel.characters) { character in
@@ -38,7 +37,6 @@ struct CharacterHorizontalList: View {
                     characterViewModel.fetchCharacters()
                 }
             }
-        }
         .frame(height: 320)
     }
 }

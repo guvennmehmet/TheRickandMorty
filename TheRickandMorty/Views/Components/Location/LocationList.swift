@@ -20,30 +20,26 @@ struct LocationList: View {
                 Spacer()
             }
             
-            ScrollView {
                 LazyVStack(spacing: 15) {
                     ForEach(locationViewModel.locations) { location in
                         NavigationLink(destination: LocationDetailView(locationViewModel: locationViewModel, locationID: location.id)) {
                             LocationCard(location: location)
                         }
-                    }
-                }
-                .onAppear {
-                    if let lastLocation = locationViewModel.locations.last,
-                       let lastFetchedLocation = locationViewModel.locations.last,
-                       lastLocation.id == lastFetchedLocation.id {
-                        locationViewModel.fetchMoreLocations()
+                        .onAppear {
+                            if location.id == locationViewModel.locations.last?.id {
+                                locationViewModel.fetchMoreLocations()
+                            }
+                        }
                     }
                 }
                 .padding(.top)
             }
+            .padding(.horizontal)
             .onAppear {
                 locationViewModel.fetchLocations()
             }
         }
-        .padding(.horizontal)
     }
-}
 
 struct LocationList_Previews: PreviewProvider {
     static var previews: some View {
