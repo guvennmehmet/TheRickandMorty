@@ -9,10 +9,9 @@ import SwiftUI
 
 struct LocationList: View {
     @ObservedObject var locationViewModel: LocationViewModel
-
+    
     var body: some View {
         VStack {
-            
             HStack {
                 Text("\(locationViewModel.locations.count) \(locationViewModel.locations.count > 1 ? "locations" : "location")")
                     .font(.headline)
@@ -22,20 +21,27 @@ struct LocationList: View {
             }
             
             ScrollView {
-                VStack(spacing: 15) {
+                LazyVStack(spacing: 15) {
                     ForEach(locationViewModel.locations) { location in
                         NavigationLink(destination: LocationDetailView(locationViewModel: locationViewModel, locationID: location.id)) {
                             LocationCard(location: location)
                         }
                     }
                 }
+                .onAppear {
+                    if let lastLocation = locationViewModel.locations.last,
+                       let lastFetchedLocation = locationViewModel.locations.last,
+                       lastLocation.id == lastFetchedLocation.id {
+                        locationViewModel.fetchMoreLocations()
+                    }
+                }
+                .padding(.top)
             }
-            .padding(.top)
+            .onAppear {
+                locationViewModel.fetchLocations()
+            }
         }
         .padding(.horizontal)
-        .onAppear {
-            locationViewModel.fetchLocations()
-        }
     }
 }
 
