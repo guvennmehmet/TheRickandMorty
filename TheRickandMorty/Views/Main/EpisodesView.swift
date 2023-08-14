@@ -24,7 +24,6 @@ struct EpisodesView: View {
                         
                         Spacer()
                         
-                        SearchToolbarItem()
                     }
                 }
             }

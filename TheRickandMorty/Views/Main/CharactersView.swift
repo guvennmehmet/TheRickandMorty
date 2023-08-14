@@ -9,11 +9,12 @@ import SwiftUI
 
 struct CharactersView: View {
     @ObservedObject var characterViewModel: CharacterViewModel
+    @ObservedObject var searchViewModel: SearchViewModel 
 
     var body: some View {
         NavigationView {
             ScrollView {
-                CharacterList(characterViewModel: characterViewModel) 
+                CharacterList(characterViewModel: characterViewModel)
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -24,7 +25,7 @@ struct CharactersView: View {
                         
                         Spacer()
                         
-                        SearchToolbarItem()
+                        SearchToolbarItem(searchViewModel: searchViewModel, characterViewModel: characterViewModel)
                     }
                 }
             }
@@ -38,8 +39,9 @@ struct CharactersView: View {
 
 struct CharactersView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = CharacterViewModel()
+        let characterViewModel = CharacterViewModel()
+        let searchViewModel = SearchViewModel()
 
-        return CharactersView(characterViewModel: viewModel)
+        return CharactersView(characterViewModel: characterViewModel, searchViewModel: searchViewModel)
     }
 }

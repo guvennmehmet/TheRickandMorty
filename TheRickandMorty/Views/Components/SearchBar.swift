@@ -7,19 +7,28 @@
 
 import SwiftUI
 
-struct Search: View {
-    @State private var searchText = ""
+struct SearchBar: View {
+    @Binding var searchText: String
     
     var body: some View {
-        NavigationView {
-            Text("Searching for \(searchText)")
+        HStack {
+            Image(systemName: "magnifyingglass")
+                .foregroundColor(.gray)
+            
+            TextField("Search", text: $searchText)
+                .foregroundColor(.primary)
+                .keyboardType(.webSearch)
         }
-        .searchable(text: $searchText)
+        .padding(8)
+        .background(Color(.systemGray5))
+        .cornerRadius(10)
+        .padding(.horizontal, 15)
     }
 }
 
-struct Search_Previews: PreviewProvider {
+struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        Search()
+        SearchBar(searchText: .constant(""))
+            .previewLayout(.sizeThatFits)
     }
 }

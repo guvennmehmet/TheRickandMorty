@@ -24,7 +24,6 @@ struct LocationsView: View {
                         
                         Spacer()
                         
-                        SearchToolbarItem()
                     }
                 }
             }

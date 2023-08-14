@@ -11,6 +11,7 @@ struct TabBar: View {
     @StateObject private var characterViewModel = CharacterViewModel()
     @StateObject private var locationViewModel = LocationViewModel()
     @StateObject private var episodeViewModel = EpisodeViewModel()
+    @StateObject private var searchViewModel = SearchViewModel()
     
     var body: some View {
         TabView {
@@ -19,7 +20,7 @@ struct TabBar: View {
                     Label("home_title", systemImage: "house")
                 }
             
-            CharactersView(characterViewModel: characterViewModel)
+            CharactersView(characterViewModel: characterViewModel, searchViewModel: searchViewModel) 
                 .tabItem {
                     Label("character_title" , systemImage: "person.2")
                 }

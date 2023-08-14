@@ -8,13 +8,29 @@
 import SwiftUI
 
 struct SearchView: View {
+    @ObservedObject var searchViewModel: SearchViewModel
+    @ObservedObject var characterViewModel: CharacterViewModel
+    
     var body: some View {
-        Search()
+        NavigationView {
+            VStack {
+                SearchBar(searchText: $searchViewModel.searchText)
+                    .padding(.horizontal)
+                    .padding(.top)
+                
+                ScrollView {
+                    SearchedCharacterList(searchViewModel: searchViewModel, characterViewModel: characterViewModel)
+                }
+            }
+        }
     }
 }
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        let searchViewModel = SearchViewModel()
+        let characterViewModel = CharacterViewModel()
+        
+        return SearchView(searchViewModel: searchViewModel, characterViewModel: characterViewModel)
     }
 }
