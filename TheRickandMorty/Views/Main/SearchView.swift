@@ -14,17 +14,29 @@ struct SearchView: View {
     var body: some View {
         NavigationView {
             VStack {
-                SearchBar(searchText: $searchViewModel.searchText)
-                    .padding(.horizontal)
-                    .padding(.top)
-                
-                Button(action: searchViewModel.performSearch) {
-                    Text("search")
+                HStack {
+                    SearchBar(searchText: $searchViewModel.searchText)
+                        .padding(.horizontal)
+                    
+                    Button(action: {
+                        searchViewModel.performSearch()  
+                    }) {
+                        Text("Search")
+                    }
                 }
+                .padding(.top)
                 
                 ScrollView {
                     SearchedCharacterList(searchViewModel: searchViewModel, characterViewModel: characterViewModel)
                 }
+                
+                Button(action: {
+                    searchViewModel.loadMore()
+                }) {
+                    Text("Load More")
+                        .foregroundColor(.blue)
+                }
+                .padding(.bottom)
             }
         }
     }

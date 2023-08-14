@@ -13,28 +13,53 @@ class SearchViewModel: ObservableObject {
     @Published var locations: [Location] = []
     @Published var episodes: [Episode] = []
     @Published var searchText = ""
+    @Published var currentPage = 1
+    @Published var totalPageCount = 0
 
     private var cancellables: Set<AnyCancellable> = []
     
     func performSearch() {
+        currentPage = 1
         search(query: searchText)
     }
 
-    func search(query: String) {
-        searchItems(urlString: "\(API.characterURL)/?name=\(query)")
-            .compactMap { (response: CharacterResponse) in response.results }
+    func search(query: String, page: Int = 1) {
+        searchItems(urlString: "\(API.characterURL)/?name=\(query)&page=\(page)")
+            .map { (response: CharacterResponse) in response.results }
             .replaceError(with: [])
-            .assign(to: &$characters)
+            .receive(on: DispatchQueue.main)
+            .handleEvents(receiveOutput: { characters in
+                if page == 1 {
+                    self.characters = characters
+                } else {
+                    self.characters.append(contentsOf: characters)
+                }
+                self.totalPageCount = characters.isEmpty ? 0 : self.totalPageCount
+            })
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print("Error: \(error)")
+                }
+            }, receiveValue: { _ in })
+            .store(in: &cancellables)
 
         searchItems(urlString: "\(API.locationURL)/?name=\(query)")
-            .compactMap { (response: LocationResponse) in response.results }
+            .map { (response: LocationResponse) in response.results }
             .replaceError(with: [])
             .assign(to: &$locations)
 
         searchItems(urlString: "\(API.episodeURL)/?name=\(query)")
-            .compactMap { (response: EpisodeResponse) in response.results }
+            .map { (response: EpisodeResponse) in response.results }
             .replaceError(with: [])
             .assign(to: &$episodes)
+    }
+    
+    func loadMore() {
+        currentPage += 1
+        search(query: searchText, page: currentPage)
     }
 
     private func searchItems<T: Codable>(urlString: String) -> AnyPublisher<T, Error> {

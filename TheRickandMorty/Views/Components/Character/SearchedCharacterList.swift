@@ -34,6 +34,15 @@ struct SearchedCharacterList: View {
                 }
                 .padding(.top)
             }
+            
+            if searchViewModel.currentPage < searchViewModel.totalPageCount {
+                Button(action: {
+                    searchViewModel.loadMore()
+                }) {
+                    Text("Load More")
+                        .foregroundColor(.blue)
+                }
+            }
         }
         .padding(.horizontal)
     }
@@ -42,7 +51,7 @@ struct SearchedCharacterList: View {
 struct SearchedCharacterList_Previews: PreviewProvider {
     static var previews: some View {
         let searchViewModel = SearchViewModel()
-        let characterViewModel = CharacterViewModel() 
+        let characterViewModel = CharacterViewModel()
 
         return SearchedCharacterList(searchViewModel: searchViewModel, characterViewModel: characterViewModel)
     }
