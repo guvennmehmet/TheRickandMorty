@@ -18,6 +18,10 @@ struct SearchView: View {
                     .padding(.horizontal)
                     .padding(.top)
                 
+                Button(action: searchViewModel.performSearch) {
+                    Text("search")
+                }
+                
                 ScrollView {
                     SearchedCharacterList(searchViewModel: searchViewModel, characterViewModel: characterViewModel)
                 }

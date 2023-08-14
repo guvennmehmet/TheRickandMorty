@@ -21,27 +21,23 @@ struct SearchedCharacterList: View {
                 Spacer()
             }
             
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
-                ForEach(searchViewModel.characters) { character in
-                    NavigationLink(destination: CharacterDetailView(characterViewModel: characterViewModel, characterID: character.id)) {
-                        CharacterCard(characterViewModel: characterViewModel, character: character)
-                    }
-                    .onAppear {
-                        if character.id == searchViewModel.characters.last?.id {
-                            searchViewModel.search(query: "")
+            if searchViewModel.characters.isEmpty {
+                Text("No characters found")
+                    .padding()
+            } else {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
+                    ForEach(searchViewModel.characters) { character in
+                        NavigationLink(destination: CharacterDetailView(characterViewModel: characterViewModel, characterID: character.id)) {
+                            CharacterCard(characterViewModel: characterViewModel, character: character)
                         }
                     }
                 }
+                .padding(.top)
             }
-            .padding(.top)
         }
         .padding(.horizontal)
-        .onAppear {
-            searchViewModel.search(query: "") 
-        }
     }
 }
-
 
 struct SearchedCharacterList_Previews: PreviewProvider {
     static var previews: some View {
