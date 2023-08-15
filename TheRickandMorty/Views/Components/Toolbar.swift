@@ -13,7 +13,7 @@ struct SearchToolbarItem: View {
 
     var body: some View {
         HStack {
-            NavigationLink(destination: SearchView(searchViewModel: searchViewModel, characterViewModel: characterViewModel)) {
+            NavigationLink(destination: CharacterSearchView(searchViewModel: searchViewModel, characterViewModel: characterViewModel)) {
                 Image(systemName: "magnifyingglass")
             }
             NavigationLink(destination: SettingsView()) {
@@ -32,4 +32,3 @@ struct Toolbar_Previews: PreviewProvider {
             .previewLayout(.fixed(width: 300, height: 44)) 
     }
 }
-

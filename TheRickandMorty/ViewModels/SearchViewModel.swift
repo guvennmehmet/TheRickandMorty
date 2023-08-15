@@ -46,15 +46,49 @@ class SearchViewModel: ObservableObject {
             }, receiveValue: { _ in })
             .store(in: &cancellables)
 
-        searchItems(urlString: "\(API.locationURL)/?name=\(query)")
+        searchItems(urlString: "\(API.locationURL)/?name=\(query)&page=\(page)")
             .map { (response: LocationResponse) in response.results }
             .replaceError(with: [])
-            .assign(to: &$locations)
-
-        searchItems(urlString: "\(API.episodeURL)/?name=\(query)")
+            .receive(on: DispatchQueue.main)
+            .handleEvents(receiveOutput: { locations in
+                if page == 1 {
+                    self.locations = locations
+                } else {
+                    self.locations.append(contentsOf: locations)
+                }
+                self.totalPageCount = locations.isEmpty ? 0 : self.totalPageCount
+            })
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print("Error: \(error)")
+                }
+            }, receiveValue: { _ in })
+            .store(in: &cancellables)
+        
+        searchItems(urlString: "\(API.episodeURL)/?name=\(query)&page=\(page)")
             .map { (response: EpisodeResponse) in response.results }
             .replaceError(with: [])
-            .assign(to: &$episodes)
+            .receive(on: DispatchQueue.main)
+            .handleEvents(receiveOutput: { episodes in
+                if page == 1 {
+                    self.episodes = episodes
+                } else {
+                    self.episodes.append(contentsOf: episodes)
+                }
+                self.totalPageCount = episodes.isEmpty ? 0 : self.totalPageCount
+            })
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    print("Error: \(error)")
+                }
+            }, receiveValue: { _ in })
+            .store(in: &cancellables)
     }
     
     func loadMore() {

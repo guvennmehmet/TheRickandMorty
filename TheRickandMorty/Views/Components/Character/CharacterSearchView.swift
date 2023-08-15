@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SearchView: View {
+struct CharacterSearchView: View {
     @ObservedObject var searchViewModel: SearchViewModel
     @ObservedObject var characterViewModel: CharacterViewModel
     
@@ -19,9 +19,11 @@ struct SearchView: View {
                         .padding(.horizontal)
                     
                     Button(action: {
-                        searchViewModel.performSearch()  
+                        searchViewModel.performSearch()
                     }) {
                         Text("Search")
+                            .padding()
+                            .buttonStyle(SearchButtonStyle())
                     }
                 }
                 .padding(.top)
@@ -34,7 +36,11 @@ struct SearchView: View {
                     searchViewModel.loadMore()
                 }) {
                     Text("Load More")
-                        .foregroundColor(.blue)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.blue)
+                        .clipShape(Capsule())
+                        .buttonStyle(CustomLoadMoreButtonStyle())
                 }
                 .padding(.bottom)
             }
@@ -47,6 +53,6 @@ struct SearchView_Previews: PreviewProvider {
         let searchViewModel = SearchViewModel()
         let characterViewModel = CharacterViewModel()
         
-        return SearchView(searchViewModel: searchViewModel, characterViewModel: characterViewModel)
+        return CharacterSearchView(searchViewModel: searchViewModel, characterViewModel: characterViewModel)
     }
 }
