@@ -53,8 +53,8 @@ struct CharactersView: View {
                     })
                     .padding(.trailing)
                     .padding(.bottom, getSafeAreaInsets().bottom == 0 ? 12 : 0)
-                    .opacity(-scrollViewOffset > 450 ? 1 : 0)
-                    .animation(.easeInOut, value: scrollViewOffset > 450)
+                    .opacity(min(max(-scrollViewOffset / 100, 0), 1))
+                    .animation(.easeInOut, value: scrollViewOffset)
                     ,alignment: .bottomTrailing
                 )
                 .navigationBarTitleDisplayMode(.inline)
@@ -93,7 +93,7 @@ struct CharactersView_Previews: PreviewProvider {
     static var previews: some View {
         let characterViewModel = CharacterViewModel()
         let searchViewModel = SearchViewModel()
-
+        
         return CharactersView(characterViewModel: characterViewModel, searchViewModel: searchViewModel)
     }
 }
