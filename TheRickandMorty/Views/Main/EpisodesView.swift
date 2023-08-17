@@ -37,24 +37,9 @@ struct EpisodesView: View {
                         .id("SCROLL_TO_TOP")
                 }
                 .overlay(
-                    Button(action: {
-                        withAnimation(.spring()) {
-                            proxyReader.scrollTo("SCROLL_TO_TOP", anchor: .top)
-                        }
-                    }, label: {
-                        Image(systemName: "arrow.up")
-                            .font(.system(size: 20, weight: .semibold))
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color.theme.red)
-                            .clipShape(Circle())
-                            .shadow(color: Color.black.opacity(0.09), radius: 5, x: 5, y: 5)
+                    ScrollToTopButton(scrollViewOffset: $scrollViewOffset, scrollToTopAction: {
+                        proxyReader.scrollTo("SCROLL_TO_TOP", anchor: .top)
                     })
-                    .padding(.trailing)
-                    .padding(.bottom, getSafeAreaInsets().bottom == 0 ? 12 : 0)
-                    .opacity(min(max(-scrollViewOffset / 100, 0), 1))
-                    .animation(.easeInOut, value: scrollViewOffset)
-                    ,alignment: .bottomTrailing
                 )
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
