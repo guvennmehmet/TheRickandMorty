@@ -21,6 +21,8 @@
 		7036B19C2A933E76007D9AAB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7036B19B2A933E76007D9AAB /* FirebaseAuth */; };
 		7036B19F2A933EE8007D9AAB /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7036B19E2A933EE8007D9AAB /* AuthenticationView.swift */; };
 		7036B1A12A9340AF007D9AAB /* SignInEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7036B1A02A9340AE007D9AAB /* SignInEmailView.swift */; };
+		7036B1A32A934297007D9AAB /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7036B1A22A934297007D9AAB /* AuthenticationManager.swift */; };
+		7036B1A52A9343D0007D9AAB /* AuthDataResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7036B1A42A9343D0007D9AAB /* AuthDataResultModel.swift */; };
 		704A0DFF2A84D0C800C0A10C /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A0DFE2A84D0C700C0A10C /* ButtonStyle.swift */; };
 		704A0E012A84D7BF00C0A10C /* CharacterSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A0E002A84D7BF00C0A10C /* CharacterSearchView.swift */; };
 		704A0E032A84DB0700C0A10C /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A0E022A84DB0700C0A10C /* Toolbar.swift */; };
@@ -81,6 +83,8 @@
 		702908E82A77E6E5008AF4C4 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		7036B19E2A933EE8007D9AAB /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		7036B1A02A9340AE007D9AAB /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
+		7036B1A22A934297007D9AAB /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		7036B1A42A9343D0007D9AAB /* AuthDataResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataResultModel.swift; sourceTree = "<group>"; };
 		704A0DFE2A84D0C700C0A10C /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		704A0E002A84D7BF00C0A10C /* CharacterSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSearchView.swift; sourceTree = "<group>"; };
 		704A0E022A84DB0700C0A10C /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 			children = (
 				7036B19E2A933EE8007D9AAB /* AuthenticationView.swift */,
 				7036B1A02A9340AE007D9AAB /* SignInEmailView.swift */,
+				7036B1A22A934297007D9AAB /* AuthenticationManager.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 				7010A4602A7A7F74006F3B91 /* EpisodeModel.swift */,
 				7010A45E2A7A6A1D006F3B91 /* PageInfo.swift */,
 				70F12B162A810A0B00E77E76 /* DateFormattable.swift */,
+				7036B1A42A9343D0007D9AAB /* AuthDataResultModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -465,6 +471,8 @@
 				7036B1A12A9340AF007D9AAB /* SignInEmailView.swift in Sources */,
 				7010A45F2A7A6A1D006F3B91 /* PageInfo.swift in Sources */,
 				708BE8272A7B9D97006AEF58 /* EpisodeDetailCard.swift in Sources */,
+				7036B1A52A9343D0007D9AAB /* AuthDataResultModel.swift in Sources */,
+				7036B1A32A934297007D9AAB /* AuthenticationManager.swift in Sources */,
 				704A0E012A84D7BF00C0A10C /* CharacterSearchView.swift in Sources */,
 				704BFD7E2A7924BA00D6E39C /* LocationList.swift in Sources */,
 				709812A02A738C0A00ACBDDF /* CharactersView.swift in Sources */,
