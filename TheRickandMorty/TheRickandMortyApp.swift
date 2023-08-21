@@ -20,7 +20,7 @@ struct TheRickandMortyApp: App {
               /*  CharactersView(characterViewModel: characterViewModel)
                     .navigationBarHidden(true) */
                 //TabBar()
-                    AuthenticationView()
+                RootView()
             }
         }
     }
