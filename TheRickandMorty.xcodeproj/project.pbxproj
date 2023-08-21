@@ -24,6 +24,7 @@
 		7036B1A32A934297007D9AAB /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7036B1A22A934297007D9AAB /* AuthenticationManager.swift */; };
 		7036B1A52A9343D0007D9AAB /* AuthDataResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7036B1A42A9343D0007D9AAB /* AuthDataResultModel.swift */; };
 		7036B1A72A9346EA007D9AAB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7036B1A62A9346EA007D9AAB /* RootView.swift */; };
+		7036B1A92A934909007D9AAB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7036B1A82A934909007D9AAB /* SettingsView.swift */; };
 		704A0DFF2A84D0C800C0A10C /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A0DFE2A84D0C700C0A10C /* ButtonStyle.swift */; };
 		704A0E012A84D7BF00C0A10C /* CharacterSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A0E002A84D7BF00C0A10C /* CharacterSearchView.swift */; };
 		704A0E032A84DB0700C0A10C /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A0E022A84DB0700C0A10C /* Toolbar.swift */; };
@@ -34,7 +35,6 @@
 		704BFD7E2A7924BA00D6E39C /* LocationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704BFD7D2A7924BA00D6E39C /* LocationList.swift */; };
 		705A4AA32A93345A00B5B3E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 705A4AA22A93345A00B5B3E6 /* GoogleService-Info.plist */; };
 		7064DFFF2A84F4AC005B1A63 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7064DFFE2A84F4AC005B1A63 /* SearchBar.swift */; };
-		7064E0012A850175005B1A63 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7064E0002A850175005B1A63 /* SettingsView.swift */; };
 		706EA5282A6E5E17002AF3C2 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706EA5272A6E5E17002AF3C2 /* CharacterModel.swift */; };
 		708BE81D2A7B7851006AEF58 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708BE81C2A7B7851006AEF58 /* Color.swift */; };
 		708BE8202A7B7E4D006AEF58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 708BE8222A7B7E4D006AEF58 /* Localizable.strings */; };
@@ -87,6 +87,7 @@
 		7036B1A22A934297007D9AAB /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		7036B1A42A9343D0007D9AAB /* AuthDataResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataResultModel.swift; sourceTree = "<group>"; };
 		7036B1A62A9346EA007D9AAB /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		7036B1A82A934909007D9AAB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		704A0DFE2A84D0C700C0A10C /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		704A0E002A84D7BF00C0A10C /* CharacterSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSearchView.swift; sourceTree = "<group>"; };
 		704A0E022A84DB0700C0A10C /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
@@ -97,7 +98,6 @@
 		704BFD7D2A7924BA00D6E39C /* LocationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationList.swift; sourceTree = "<group>"; };
 		705A4AA22A93345A00B5B3E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7064DFFE2A84F4AC005B1A63 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
-		7064E0002A850175005B1A63 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		706EA5272A6E5E17002AF3C2 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		708BE81C2A7B7851006AEF58 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		708BE8212A7B7E4D006AEF58 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -185,6 +185,7 @@
 				7036B1A02A9340AE007D9AAB /* SignInEmailView.swift */,
 				7036B1A22A934297007D9AAB /* AuthenticationManager.swift */,
 				7036B1A62A9346EA007D9AAB /* RootView.swift */,
+				7036B1A82A934909007D9AAB /* SettingsView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -257,7 +258,6 @@
 				7098129B2A738BF100ACBDDF /* EpisodesView.swift */,
 				709812A32A738C3500ACBDDF /* FavoritesView.swift */,
 				70F12B182A81105100E77E76 /* AboutView.swift */,
-				7064E0002A850175005B1A63 /* SettingsView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -453,6 +453,7 @@
 				7064DFFF2A84F4AC005B1A63 /* SearchBar.swift in Sources */,
 				708BE8362A7BD2C3006AEF58 /* LocationDetailCard.swift in Sources */,
 				70FE7E762A82255000426094 /* LocationHorizontalList.swift in Sources */,
+				7036B1A92A934909007D9AAB /* SettingsView.swift in Sources */,
 				70F19A072A8A17870025488E /* SearchViewModel.swift in Sources */,
 				704BFD742A79001200D6E39C /* LocationCard.swift in Sources */,
 				70F19A092A8A199C0025488E /* SearchedCharacterList.swift in Sources */,
@@ -464,7 +465,6 @@
 				704BFD702A78FD9300D6E39C /* LocationModel.swift in Sources */,
 				709812A82A73AEEE00ACBDDF /* CharacterCard.swift in Sources */,
 				7010A4682A7A860A006F3B91 /* EpisodeList.swift in Sources */,
-				7064E0012A850175005B1A63 /* SettingsView.swift in Sources */,
 				7036B19F2A933EE8007D9AAB /* AuthenticationView.swift in Sources */,
 				702908E32A77CA0C008AF4C4 /* CharacterViewModel.swift in Sources */,
 				7036B1A72A9346EA007D9AAB /* RootView.swift in Sources */,
