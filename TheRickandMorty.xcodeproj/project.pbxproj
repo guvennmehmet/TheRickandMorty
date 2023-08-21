@@ -18,6 +18,8 @@
 		702908E92A77E6E5008AF4C4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702908E82A77E6E5008AF4C4 /* API.swift */; };
 		7036B1972A933597007D9AAB /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7036B1962A933597007D9AAB /* FirebaseAnalytics */; };
 		7036B1992A933597007D9AAB /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7036B1982A933597007D9AAB /* FirebaseAnalyticsSwift */; };
+		7036B19C2A933E76007D9AAB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7036B19B2A933E76007D9AAB /* FirebaseAuth */; };
+		7036B19F2A933EE8007D9AAB /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7036B19E2A933EE8007D9AAB /* AuthenticationView.swift */; };
 		704A0DFF2A84D0C800C0A10C /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A0DFE2A84D0C700C0A10C /* ButtonStyle.swift */; };
 		704A0E012A84D7BF00C0A10C /* CharacterSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A0E002A84D7BF00C0A10C /* CharacterSearchView.swift */; };
 		704A0E032A84DB0700C0A10C /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A0E022A84DB0700C0A10C /* Toolbar.swift */; };
@@ -76,6 +78,7 @@
 		702908DE2A777DD7008AF4C4 /* CharacterDetailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailCard.swift; sourceTree = "<group>"; };
 		702908E22A77CA0C008AF4C4 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		702908E82A77E6E5008AF4C4 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		7036B19E2A933EE8007D9AAB /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		704A0DFE2A84D0C700C0A10C /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		704A0E002A84D7BF00C0A10C /* CharacterSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSearchView.swift; sourceTree = "<group>"; };
 		704A0E022A84DB0700C0A10C /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
@@ -132,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7036B1992A933597007D9AAB /* FirebaseAnalyticsSwift in Frameworks */,
+				7036B19C2A933E76007D9AAB /* FirebaseAuth in Frameworks */,
 				7036B1972A933597007D9AAB /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +161,21 @@
 				702908E82A77E6E5008AF4C4 /* API.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		7036B19A2A933E76007D9AAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7036B19D2A933EC0007D9AAB /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				7036B19E2A933EE8007D9AAB /* AuthenticationView.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		704BFD7F2A79338300D6E39C /* Character */ = {
@@ -285,6 +304,7 @@
 			children = (
 				70FD1FF32A6AC412000E02A8 /* TheRickandMorty */,
 				70FD1FF22A6AC412000E02A8 /* Products */,
+				7036B19A2A933E76007D9AAB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -299,9 +319,10 @@
 		70FD1FF32A6AC412000E02A8 /* TheRickandMorty */ = {
 			isa = PBXGroup;
 			children = (
-				705A4AA22A93345A00B5B3E6 /* GoogleService-Info.plist */,
 				70FD1FF42A6AC412000E02A8 /* TheRickandMortyApp.swift */,
+				705A4AA22A93345A00B5B3E6 /* GoogleService-Info.plist */,
 				708BE8222A7B7E4D006AEF58 /* Localizable.strings */,
+				7036B19D2A933EC0007D9AAB /* Authentication */,
 				702908E72A77E6D3008AF4C4 /* Service */,
 				706EA5262A6E5DA4002AF3C2 /* Models */,
 				70F1903F2A6E518B001F6266 /* Views */,
@@ -340,6 +361,7 @@
 			packageProductDependencies = (
 				7036B1962A933597007D9AAB /* FirebaseAnalytics */,
 				7036B1982A933597007D9AAB /* FirebaseAnalyticsSwift */,
+				7036B19B2A933E76007D9AAB /* FirebaseAuth */,
 			);
 			productName = TheRickandMorty;
 			productReference = 70FD1FF12A6AC412000E02A8 /* TheRickandMorty.app */;
@@ -431,6 +453,7 @@
 				709812A82A73AEEE00ACBDDF /* CharacterCard.swift in Sources */,
 				7010A4682A7A860A006F3B91 /* EpisodeList.swift in Sources */,
 				7064E0012A850175005B1A63 /* SettingsView.swift in Sources */,
+				7036B19F2A933EE8007D9AAB /* AuthenticationView.swift in Sources */,
 				702908E32A77CA0C008AF4C4 /* CharacterViewModel.swift in Sources */,
 				704A0E032A84DB0700C0A10C /* Toolbar.swift in Sources */,
 				70F12B122A80E0F800E77E76 /* CustomListRowView.swift in Sources */,
@@ -690,6 +713,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7036B1952A933597007D9AAB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalyticsSwift;
+		};
+		7036B19B2A933E76007D9AAB /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7036B1952A933597007D9AAB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
