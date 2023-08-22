@@ -349,10 +349,10 @@
 		70FD1FF32A6AC412000E02A8 /* TheRickandMorty */ = {
 			isa = PBXGroup;
 			children = (
-				7036B1AF2A9375D9007D9AAB /* Info.plist */,
-				70FD1FF42A6AC412000E02A8 /* TheRickandMortyApp.swift */,
-				705A4AA22A93345A00B5B3E6 /* GoogleService-Info.plist */,
 				708BE8222A7B7E4D006AEF58 /* Localizable.strings */,
+				7036B1AF2A9375D9007D9AAB /* Info.plist */,
+				705A4AA22A93345A00B5B3E6 /* GoogleService-Info.plist */,
+				70FD1FF42A6AC412000E02A8 /* TheRickandMortyApp.swift */,
 				7036B1B02A937849007D9AAB /* Utilities */,
 				7036B19D2A933EC0007D9AAB /* Authentication */,
 				702908E72A77E6D3008AF4C4 /* Service */,

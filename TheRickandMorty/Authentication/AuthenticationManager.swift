@@ -8,11 +8,6 @@
 import Foundation
 import FirebaseAuth
 
-enum AuthProviderOption: String {
-    case email = "password"
-    case google = "google.com"
-}
-
 final class AuthenticationManager {
     
     static let shared = AuthenticationManager()
@@ -25,7 +20,7 @@ final class AuthenticationManager {
         return AuthDataResulModel(user: user)
     }
     
-    func getProvider() throws -> [AuthProviderOption] {
+    func getProviders() throws -> [AuthProviderOption] {
         guard let providerData = Auth.auth().currentUser?.providerData else {
             throw URLError(.badServerResponse)
         }
@@ -94,6 +89,39 @@ extension AuthenticationManager {
     
     func signIn(credential: AuthCredential) async throws -> AuthDataResulModel {
         let authDataResult = try await Auth.auth().signIn(with: credential)
+        return AuthDataResulModel(user: authDataResult.user)
+    }
+    
+}
+
+// MARK: - SIGN IN ANONYMOUS
+
+extension AuthenticationManager {
+    
+    @discardableResult
+    func signInAnonymous() async throws -> AuthDataResulModel {
+        let authDataResult = try await Auth.auth().signInAnonymously()
+        return AuthDataResulModel(user: authDataResult.user)
+    }
+    
+    /*
+    func linkEmail(email: String, password: String) async throws -> AuthDataResulModel {
+        let credential = EmailAuthProvider.credential(withEmail: email, link: password)
+        return try await linkCredential(credential: credential)
+    }
+     */
+    
+    func linkGoogle(tokens: GoogleSignInResultModel) async throws -> AuthDataResulModel {
+        let credential = GoogleAuthProvider.credential(withIDToken: tokens.idToken, accessToken: tokens.accessToken)
+        return try await linkCredential(credential: credential)
+    }
+    
+    private func linkCredential(credential: AuthCredential) async throws -> AuthDataResulModel {
+        guard let user = Auth.auth().currentUser else {
+            throw URLError(.badURL)
+        }
+        
+        let authDataResult = try await user.link(with: credential)
         return AuthDataResulModel(user: authDataResult.user)
     }
     
