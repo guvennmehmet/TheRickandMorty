@@ -51,7 +51,8 @@ struct SettingsView: View {
             viewModel.loadAuthProviders()
             viewModel.loadAuthUser()
         }
-        .navigationBarTitle("Settings")
+        .navigationBarHidden(true)
+        //.navigationBarTitle("Settings")
     }
 }
 
