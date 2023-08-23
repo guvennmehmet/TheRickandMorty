@@ -19,8 +19,8 @@ struct TheRickandMortyApp: App {
             NavigationView {
               /*  CharactersView(characterViewModel: characterViewModel)
                     .navigationBarHidden(true) */
-                //TabBar()
-                RootView()
+                TabBar()
+                //RootView()
             }
         }
     }

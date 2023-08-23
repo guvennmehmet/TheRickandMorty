@@ -31,7 +31,7 @@
 		7036B1B82A937FC4007D9AAB /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7036B1B72A937FC4007D9AAB /* SignInGoogleHelper.swift */; };
 		704A0DFF2A84D0C800C0A10C /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A0DFE2A84D0C700C0A10C /* ButtonStyle.swift */; };
 		704A0E012A84D7BF00C0A10C /* CharacterSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A0E002A84D7BF00C0A10C /* CharacterSearchView.swift */; };
-		704A0E032A84DB0700C0A10C /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A0E022A84DB0700C0A10C /* Toolbar.swift */; };
+		704A0E032A84DB0700C0A10C /* SearchToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A0E022A84DB0700C0A10C /* SearchToolbar.swift */; };
 		704BFD702A78FD9300D6E39C /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704BFD6F2A78FD9300D6E39C /* LocationModel.swift */; };
 		704BFD742A79001200D6E39C /* LocationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704BFD732A79001200D6E39C /* LocationCard.swift */; };
 		704BFD7A2A79181E00D6E39C /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704BFD792A79181E00D6E39C /* LocationViewModel.swift */; };
@@ -69,6 +69,7 @@
 		70F19A072A8A17870025488E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F19A062A8A17870025488E /* SearchViewModel.swift */; };
 		70F19A092A8A199C0025488E /* SearchedCharacterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F19A082A8A199C0025488E /* SearchedCharacterList.swift */; };
 		70FC290A2A95D9CF001FE949 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FC29092A95D9CF001FE949 /* SettingsViewModel.swift */; };
+		70FC29122A96153C001FE949 /* SettingsToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FC29112A96153B001FE949 /* SettingsToolBar.swift */; };
 		70FD1FF52A6AC412000E02A8 /* TheRickandMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FD1FF42A6AC412000E02A8 /* TheRickandMortyApp.swift */; };
 		70FD1FF92A6AC415000E02A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70FD1FF82A6AC415000E02A8 /* Assets.xcassets */; };
 		70FD1FFC2A6AC415000E02A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70FD1FFB2A6AC415000E02A8 /* Preview Assets.xcassets */; };
@@ -98,7 +99,7 @@
 		7036B1B72A937FC4007D9AAB /* SignInGoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInGoogleHelper.swift; sourceTree = "<group>"; };
 		704A0DFE2A84D0C700C0A10C /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		704A0E002A84D7BF00C0A10C /* CharacterSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSearchView.swift; sourceTree = "<group>"; };
-		704A0E022A84DB0700C0A10C /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
+		704A0E022A84DB0700C0A10C /* SearchToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchToolbar.swift; sourceTree = "<group>"; };
 		704BFD6F2A78FD9300D6E39C /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		704BFD732A79001200D6E39C /* LocationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCard.swift; sourceTree = "<group>"; };
 		704BFD792A79181E00D6E39C /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
@@ -137,6 +138,7 @@
 		70F19A062A8A17870025488E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		70F19A082A8A199C0025488E /* SearchedCharacterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedCharacterList.swift; sourceTree = "<group>"; };
 		70FC29092A95D9CF001FE949 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		70FC29112A96153B001FE949 /* SettingsToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsToolBar.swift; sourceTree = "<group>"; };
 		70FD1FF12A6AC412000E02A8 /* TheRickandMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheRickandMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70FD1FF42A6AC412000E02A8 /* TheRickandMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheRickandMortyApp.swift; sourceTree = "<group>"; };
 		70FD1FF82A6AC415000E02A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -298,12 +300,13 @@
 				70BBECE62A8E2CB6005B6602 /* ScrollToTopButton.swift */,
 				70BBECE42A8E2BD4005B6602 /* Extensions.swift */,
 				709812972A738BAA00ACBDDF /* TabBar.swift */,
-				704A0E022A84DB0700C0A10C /* Toolbar.swift */,
+				704A0E022A84DB0700C0A10C /* SearchToolbar.swift */,
 				7064DFFE2A84F4AC005B1A63 /* SearchBar.swift */,
 				70F12B112A80E0F800E77E76 /* CustomListRowView.swift */,
 				704BFD7F2A79338300D6E39C /* Character */,
 				704BFD802A79339400D6E39C /* Location */,
 				7010A4642A7A826F006F3B91 /* Episode */,
+				70FC29112A96153B001FE949 /* SettingsToolBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				704BFD742A79001200D6E39C /* LocationCard.swift in Sources */,
 				70F19A092A8A199C0025488E /* SearchedCharacterList.swift in Sources */,
 				7010A46C2A7A916B006F3B91 /* EpisodeDetailView.swift in Sources */,
+				70FC29122A96153C001FE949 /* SettingsToolBar.swift in Sources */,
 				708BE82D2A7BB90B006AEF58 /* EpisodeDetailListCard.swift in Sources */,
 				70F12B0C2A80C8A500E77E76 /* TextStyle.swift in Sources */,
 				70F12B172A810A0B00E77E76 /* DateFormattable.swift in Sources */,
@@ -495,7 +499,7 @@
 				7036B19F2A933EE8007D9AAB /* AuthenticationView.swift in Sources */,
 				702908E32A77CA0C008AF4C4 /* CharacterViewModel.swift in Sources */,
 				7036B1A72A9346EA007D9AAB /* RootView.swift in Sources */,
-				704A0E032A84DB0700C0A10C /* Toolbar.swift in Sources */,
+				704A0E032A84DB0700C0A10C /* SearchToolbar.swift in Sources */,
 				70F12B122A80E0F800E77E76 /* CustomListRowView.swift in Sources */,
 				708BE81D2A7B7851006AEF58 /* Color.swift in Sources */,
 				7036B1B82A937FC4007D9AAB /* SignInGoogleHelper.swift in Sources */,

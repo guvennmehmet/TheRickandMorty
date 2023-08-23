@@ -20,7 +20,7 @@ struct SearchToolbarItem: View {
     }
 }
 
-struct Toolbar_Previews: PreviewProvider {
+struct SearchToolbar_Previews: PreviewProvider {
     static var previews: some View {
         let searchViewModel = SearchViewModel()
         let characterViewModel = CharacterViewModel()
